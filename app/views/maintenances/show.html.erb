@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @maintenance.user_id %>
+</p>
+
+<p>
+  <strong>Equipment:</strong>
+  <%= @maintenance.equipment_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @maintenance.description %>
+</p>
+
+<p>
+  <strong>Precaution:</strong>
+  <%= @maintenance.precaution %>
+</p>
+
+<p>
+  <strong>Trace number:</strong>
+  <%= @maintenance.trace_number %>
+</p>
+
+<p>
+  <strong>Diagnosis:</strong>
+  <%= @maintenance.diagnosis %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @maintenance.status %>
+</p>
+
+<p>
+  <strong>Scheduled at:</strong>
+  <%= @maintenance.scheduled_at %>
+</p>
+
+<p>
+  <strong>Completion expected at:</strong>
+  <%= @maintenance.completion_expected_at %>
+</p>
+
+<p>
+  <strong>Recomission projected at:</strong>
+  <%= @maintenance.recomission_projected_at %>
+</p>
+
+<p>
+  <strong>Other status:</strong>
+  <%= @maintenance.other_status %>
+</p>
+
+<%= link_to 'Edit', edit_maintenance_path(@maintenance) %> |
+<%= link_to 'Back', maintenances_path %>

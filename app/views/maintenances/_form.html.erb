@@ -1,0 +1,72 @@
+<%= form_with(model: maintenance, local: true) do |form| %>
+  <% if maintenance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(maintenance.errors.count, "error") %> prohibited this maintenance from being saved:</h2>
+
+      <ul>
+      <% maintenance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :equipment_id %>
+    <%= form.number_field :equipment_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :precaution %>
+    <%= form.text_area :precaution %>
+  </div>
+
+  <div class="field">
+    <%= form.label :trace_number %>
+    <%= form.text_field :trace_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :diagnosis %>
+    <%= form.text_area :diagnosis %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.number_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :scheduled_at %>
+    <%= form.date_select :scheduled_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :completion_expected_at %>
+    <%= form.date_select :completion_expected_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :recomission_projected_at %>
+    <%= form.date_select :recomission_projected_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :other_status %>
+    <%= form.text_area :other_status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

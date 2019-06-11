@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: cesem_development
+  pool: 5
+  username: cesem 
+  password: cesem 
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: cesem_test
+  pool: 5
+  username: cesem 
+  password: cesem 
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: cesem_production
+  pool: 5
+  username: cesem 
+  password: cesem 
