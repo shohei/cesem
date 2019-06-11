@@ -1,99 +1,44 @@
-<% if user_signed_in? %> 
+<h2> <%= current_user.name %> is logged in.</h2> 
+<h4> email: <%= current_user.email %> </h4>
+<%= link_to "logout", destroy_user_session_path, method: :delete %> 
 
-  <h2> <%= current_user.name %> is logged in.</h2> 
-  <h4> email: <%= current_user.email %> </h4>
-  <%= link_to "logout", destroy_user_session_path, method: :delete %> 
+<div class="container" style="margin-top: 60px;">
 
-      <div class="container" style="margin-top: 60px;">
-
-    <div class="columns is-centered">
-        <div class="column">
+  <div class="columns is-centered">
+    <div class="column">
 
      <div style="margin:20px 200px; border: 2px solid hsl(141, 71%, 48%); border-radius: 10px; padding: 40px 100px;">
 
        <h1 class="is-size-3 has-text-danger has-text-centered">CeSEM</h1>
 
-        <p class="is-size-5 has-text-centered has-text-white" style="background-color: hsl(204, 86%, 53%);">Kindly select one option</p>
+       <p class="is-size-5 has-text-centered has-text-white" style="background-color: hsl(204, 86%, 53%);">Kindly select one option</p>
 
-        <div class="has-text-danger is-size-5"><a href="">New equipment details</a></div>
-        <div class="has-text-danger is-size-5"><a href="">New maintenance / Repair request</a></div>
-        <div class="has-text-danger is-size-5"><a href="">Request follow-up</a></div>
-        <div class="has-text-danger is-size-5"><a href="">Billing</a></div>
-        <div class="has-text-danger is-size-5"><a href="">Customer Satisfaction Survey</a></div>
+       <div class="has-text-danger is-size-5"><a href="">New equipment details</a></div>
+       <div class="has-text-danger is-size-5"><a href="">New maintenance / Repair request</a></div>
+       <div class="has-text-danger is-size-5"><a href="">Request follow-up</a></div>
+       <div class="has-text-danger is-size-5"><a href="">Billing</a></div>
+       <div class="has-text-danger is-size-5"><a href="">Customer Satisfaction Survey</a></div>
 
-        <div class="field is-grouped" style="margin: 60px 0px;">
-          <p class="control">
-            <a class="button is-warning">
-                Back
+       <div class="field is-grouped" style="margin: 60px 0px;">
+        <p class="control">
+          <a class="button is-warning">
+            Back
           </a>
         </p>
         <p class="control">
          <a class="button is-info">
-            Next
+          Next
         </a>
-        </p>
-        <p class="control">
-            <a class="button is-danger">
-                Sign Out
-            </a>
-        </p>
-        </div>
-
-       </div>
-      </div>
-     </div>
-
-
- </div>
-
-<% else %>
-  <h2> Not logged in</h2>
-  <%= link_to "login", new_user_session_path, class: 'post' %> 
-  <%= link_to "sign up", new_user_registration_path, class: 'post' %> 
-
-    <div class="container" style="margin-top: 40px;">
-     <h1 class="is-size-1 has-text-danger has-text-centered">CeSEM</h1>
-     <div style="border: 1px solid hsl(204, 86%, 53%); margin: 0px 200px;"></div>
-     <h2 class="is-size-3 has-text-centered"><span class="has-text-danger">Ce</span>ntre for <span class="has-text-danger">S</span>cientific <span class="has-text-danger">E</span>quipment <span class="has-text-danger">M</span>aintenance</h2>
-
-     <div style="border: 1px solid hsl(348, 100%, 61%);margin: 0px 200px; margin-top: 100px;"></div>
-
-     <div style="margin:20px 200px; border: 2px solid hsl(204, 86%, 53%); border-radius: 10px; padding: 40px 100px;">
-        <p class="is-size-5 has-text-centered">Login to place your request</p>
-
-        <div class="field">
-          <label class="label">Username</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="Username:">
-          </div>
-        </div>
-
-        <div class="field">
-            <label class="label">Password</label>
-            <div class="control">
-                <input class="input" type="password" placeholder="Password:">
-            </div>
-        </div>
-
-        <div class="field is-grouped is-grouped-centered" style="margin-top: 40px;">
-          <p class="control">
-            <a class="button is-danger">
-                Forgot password
-          </a>
-        </p>
-        <p class="control">
-        <a class="button is-primary">
-            Login
+      </p>
+      <p class="control">
+        <a class="button is-danger">
+          Sign Out
         </a>
-        </p>
-        </div>
+      </p>
+    </div>
 
-     </div>
+  </div>
+</div>
+</div>
 
-     <div style="border: 1px solid hsl(348, 100%, 61%);margin: 0px 200px; margin-top: 20px;"></div>
-
- </div>
-
-
-
-<% end %>
+</div>
