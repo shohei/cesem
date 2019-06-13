@@ -292,7 +292,6 @@ hns:
   abbreviation: HNS
   school: sofnus
 
-
 lprm:
   name: Department of Land Resources, Planning and Management
   abbreviation: LPRM
@@ -302,3 +301,26 @@ ans:
   name: Department of Animal Sciences
   abbreviation: ANS
   school: sonras
+
+enw:
+  name: Engineering Workshop
+  abbreviation:
+  school: misc_school
+
+ipic:
+  name: Innovation and Prototyping Integrated Centre
+  abbreviation: iPIC
+  school: misc_school
+
+icmob:
+  name: Innovation Center for Molecular Biology and Biochemistry
+  abbreviation: iCMoB
+  school: misc_school
+
+icb:
+  name: Innovation Center for Bio-resources 
+  abbreviation: iCB
+  school: misc_school
+
+
+

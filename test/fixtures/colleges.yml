@@ -6,6 +6,9 @@
 # two:
 #   name: MyString
 
+misc_college:
+  name: Miscellaneous
+  abbreviation:
 
 COHES:
   name: College of Health Sciences

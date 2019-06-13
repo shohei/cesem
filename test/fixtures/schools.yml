@@ -1,4 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+misc_school:
+  name: Miscellaneous 
+  abbreviation:
+  college: misc_college
 
 nursing: 
   name: School of Nursing

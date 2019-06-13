@@ -49,10 +49,10 @@ ActiveRecord::Schema.define(version: 2019_06_13_104435) do
     t.integer "user_id"
     t.string "name"
     t.string "model_name"
-    t.string "model_number"
+    t.text "model_number"
     t.string "serial_number"
     t.string "inventory_number"
-    t.date "acquired_at"
+    t.integer "acquired_year"
     t.string "location"
     t.string "manufacturer"
     t.string "country_of_origin"
@@ -60,6 +60,13 @@ ActiveRecord::Schema.define(version: 2019_06_13_104435) do
     t.integer "additional_info", default: [], array: true
     t.text "other_info"
     t.integer "dealer_id"
+    t.integer "internal_number"
+    t.string "remark"
+    t.integer "price"
+    t.text "description"
+    t.integer "quantity"
+    t.string "where_purchased"
+    t.integer "department_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
