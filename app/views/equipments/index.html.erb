@@ -1,24 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Equipments</h1>
 
-<table>
+<table class="table is-striped">
   <thead>
     <tr>
-      <th>User</th>
       <th>Name</th>
-      <th>Model name</th>
-      <th>Model number</th>
-      <th>Serial number</th>
-      <th>Inventory number</th>
-      <th>Acquired at</th>
+      <th>Acquired year</th>
       <th>Location</th>
       <th>Manufacturer</th>
       <th>Country of origin</th>
-      <th>Warranty period</th>
-      <th>Additional info</th>
-      <th>Other info</th>
-      <th>Dealer</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,20 +16,11 @@
   <tbody>
     <% @equipments.each do |equipment| %>
       <tr>
-        <td><%= equipment.user_id %></td>
         <td><%= equipment.name %></td>
-        <td><%= equipment.model_name %></td>
-        <td><%= equipment.model_number %></td>
-        <td><%= equipment.serial_number %></td>
-        <td><%= equipment.inventory_number %></td>
-        <td><%= equipment.acquired_at %></td>
+        <td><%= equipment.acquired_year %></td>
         <td><%= equipment.location %></td>
         <td><%= equipment.manufacturer %></td>
         <td><%= equipment.country_of_origin %></td>
-        <td><%= equipment.warranty_period %></td>
-        <td><%= equipment.additional_info %></td>
-        <td><%= equipment.other_info %></td>
-        <td><%= equipment.dealer_id %></td>
         <td><%= link_to 'Show', equipment %></td>
         <td><%= link_to 'Edit', edit_equipment_path(equipment) %></td>
         <td><%= link_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -47,6 +28,7 @@
     <% end %>
   </tbody>
 </table>
+    <%= will_paginate @equipments,  renderer: BulmaPagination::Rails %>
 
 <br>
 

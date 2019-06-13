@@ -6,5 +6,60 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(name: 'Shohei Aoki', email: 'shoaok@gmail.com', role: 'admin', password: 'hogehoge')
+# User.create(name: 'Shohei Aoki', email: 'shoaok@gmail.com', role: 'admin', password: 'hogehoge')
+
+require 'csv'
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'seed_equipment.csv'))
+csv = CSV.parse(csv_text, :headers => true)
+counter = 0
+csv.each do |row|
+    q = row['quantity'].to_i
+    if q>1 
+        q.times do 
+          t = Equipment.new
+          t.user_id = User.first.id
+          t.name = row['name']
+          t.model_name= row['model_name']
+          t.model_number = row['model_number']
+          t.serial_number = row['serial_number']
+          t.country_of_origin = row['country_of_origin']
+          t.manufacturer = row['manufacturer']
+          t.where_purchased = row['where_purchased']
+          t.price = row['price']
+          t.acquired_year = row['acquired_year']
+          t.location = row['location']
+          t.remark = row['remark']
+          if row['department']==nil
+            puts row.to_hash
+          end
+          t.department_id = Department.find_by_alias(row['department']).id
+          t.description =  row['description']
+          t.inventory_number = row['inventory_number']
+          t.save!
+          puts "#{t.name}@#{row['department']} saved"
+        end
+    else
+        t = Equipment.new
+        t.user_id = User.first.id
+        t.name = row['name']
+        t.model_name= row['model_name']
+        t.model_number = row['model_number']
+        t.serial_number = row['serial_number']
+        t.country_of_origin = row['country_of_origin']
+        t.manufacturer = row['manufacturer']
+        t.where_purchased = row['where_purchased']
+        t.price = row['price']
+        t.acquired_year = row['acquired_year']
+        t.location = row['location']
+        t.remark = row['remark']
+          if row['department']==nil
+            puts row.to_hash
+          end
+        t.department_id = Department.find_by_alias(row['department']).id 
+        t.description =  row['description']
+        t.inventory_number = row['inventory_number']
+        t.save!
+        puts "#{t.name} saved"
+    end
+end
 

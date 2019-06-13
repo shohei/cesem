@@ -4,6 +4,7 @@ class CreateDepartments < ActiveRecord::Migration[5.2]
       t.integer :school_id
       t.string :name
       t.string :abbreviation
+      t.string :alias
 
       t.timestamps
     end

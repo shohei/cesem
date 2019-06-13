@@ -4,323 +4,385 @@ general_nursing:
   name: Department of General Nursing
   abbreviation: 
   school: nursing  
+  alias: general_nursing
 
 community_health_nursing:
   name: Department of Community Health Nursing
   abbreviation:
   school: nursing
+  alias: community_health_nursing
 
 midwifery:
   name: Department of Midwifery
   abbreviation:
   school: nursing
+  alias: midwifery
 
 nursing_eductaion_leadership:
   name: Department of Nursing Eductaion Leadership, Management and Reserach
   abbreviation:
   school: nursing 
+  alias: nursing_eductaion_leadership
 
 child_health:
   name: Department of Child Health and Paediatrics
   abbreviation:
   school: medicine
+  alias: child_health
 
 clinical_medicine:
   name: Department of Clinical Medicine
   abbreviation:
   school: medicine
+  alias: clinical_medicine
 
 clitical_care:
   name: Department of Clitical Care and Anaesthesiology
   abbreviation:
   school: medicine 
+  alias: clitical_care
 
 human_anatomy:
   name: Department of Human Anatomy
   abbreviation:
   school: medicine
+  alias: human_anatomy
 
 human_pathology:
   name: Department of Human Pathology
   abbreviation:
   school: medicine
+  alias: human_pathology
 
 internal_medicine:
   name: Department of Internal Medicine and Therapeutics
   abbreviation:
   school: medicine
+  alias: internal_medicine
 
 medical_physiology:
   name: Department of Medical Physiology
   abbreviation:
   school: medicine
+  alias: medical_physiology
 
 obsterics:
   name: Department of Obsterics and Gynaecology
   abbreviation:
   school: medicine
+  alias: obsterics
 
-Psychiatry:
+psychiatry:
   name: Department of Psychiatry
   abbreviation:
   school: medicine
+  alias: psychiatry
 
 radiology:
   name: Department of Radiology Imaging and Radiotherapy
   abbreviation:
   school: medicine
+  alias: radiology
 
 rehabilitative:
   name: Department of Rehabilitative Sciences
   abbreviation:
   school: medicine
+  alias: rehabilitative
 
 surgery:
   name: Department of Surgery
   abbreviation:
   school: medicine
+  alias: surgery
 
 pharmacy:
   name: Department of Pharmacy
   abbreviation:
   school: pharmacy
+  alias: pharmacy
 
 environmental_health_disease_control:
   name: Department of Environmental Health and Disease Control
   abbreviation:
   school: public_health
+  alias: environmental_health_disease_control
 
 community_health_development:
   name: Department of Community Health and Development
   abbreviation:
   school: public_health
+  alias: community_health_development
 
 health_record:
   name: Department of Health Record and Information Management
   abbreviation:
   school: public_health
+  alias: health_record
 
 biochemistry:
   name: Department of Biochemistry
   abbreviation:
   school: biomedical_science
+  alias: biochemistry
 
 mls:
   name: Department of Medical Laboratory Sciences
   abbreviation:
   school: biomedical_science
+  alias: mls
 
 medical_microbiology:
   name: Department of Medical Microbiology
   abbreviation:
   school: biomedical_science
+  alias: medical_microbiology
 
 physics:
   name: Department of Physics
   abbreviation:
   school: physical_sciences
+  alias: physics
 
 chemistry:
   name: Department of Chemistry
   abbreviation:
-  school: 
+  school: physical_sciences 
+  alias: chemistry
 
 zoology:
   name: Department of Zoology
   abbreviation:
   school: biological_sciences
+  alias: zoology
 
 botany:
   name: Department of Botany
   abbreviation:
   school: biological_sciences
+  alias: botany
 
 statistics:
   name: Department of Statistics and Actuarial Sciences
   abbreviation:
   school: math
+  alias: statistics
 
 pure_math:
   name: Department of Pure and Appliec Mathematics
   abbreviation:
   school: math
+  alias: pure_math
 
 it:
   name: Department of Information Technology
   abbreviation:
   school: scit
+  alias: it
 
 computing:
   name: Department of Computing
   abbreviation:
   school: scit
+  alias: computing
 
 business_administration:
   name: Department of Business Administration
   abbreviation:
   school: business
+  alias: business_administration
 
 economics:
   name: Department of Economics, Accounting and Finance
   abbreviation:
   school: business
+  alias: economics
 
 entrepreneurship_leadership:
   name: Department of Entrepreneurship, Technology, Leadership and Management
   abbreviation:
   school: entrepreneurship
+  alias: entrepreneurship_leadership
 
 procurement:
   name: Department of Procurement and Logistics
   abbreviation:
   school: entrepreneurship
+  alias: procurement
 
 media:
   name: Department of Media Technology and Applied Communication
   abbreviation:
   school: communication_development
+  alias: media
 
 development_studies:
   name: Department of Development Studies
   abbreviation:
   school: communication_development
+  alias: development_studies
 
 center_foreign_language:
   name: Center for Foreign Language and Linguistics
   abbreviation:
   school: communication_development
+  alias: center_foreign_language
 
 architecture:
   name: Department of Architecture
   abbreviation:
   school: sabs
+  alias: architecture
 
 landscape:
   name: Department of Landscape Architecture
   abbreviation:
   school: sabs
+  alias: landscape
 
 construction:
   name: Department of Construction Management
   abbreviation:
   school: sabs
+  alias: construction
 
 mechanical:
   name: Department of Mechanical Engineering
   abbreviation:
   school: sommme
+  alias: mechanical
 
 mechatronic:
   name: Department of Mechatronic Engineering
   abbreviation:
   school: sommme
+  alias: mechatronic
 
 marine:
   name: Department of Marine Engineering
   abbreviation:
   school: sommme
+  alias: marine
 
 mining:
   name: Department of Mining, Materials and Petroleum Engineering
   abbreviation:
   school: sommme
+  alias: mining
 
 elec:
   name: Department of Electrical and Electronic Engineering
   abbreviation:
   school: seeie
+  alias: elec
 
 telecom:
   name: Department of Telecommunication and Information Technology
   abbreviation:
   school: seeie
+  alias: telecom
 
 civil:
   name: Department of Civil, Construction and Environmental Engineering
   abbreviation:
   school: scege
+  alias: civil
 
 geo:
   name: Department of Geomatic Engineering and Geospatial Information Systems
   abbreviation:
   school: scege
+  alias: geo
 
 chemical_engineering:
   name: Department of Chemical Engineering
   abbreviation:
   school: sobee
+  alias: chemical_engineering
 
 agri_bio_engineering:
   name: Department of Agricultural Biosystems Engineering
   abbreviation:
   school: sobee
+  alias: agri_bio_engineering
 
 water:
   name: Department of Water and Environmental Management
   abbreviation:
   school: sobee
+  alias: water
 
 energy:
   name: Department of Energy and Environmental Technology
   abbreviation:
   school: sobee
+  alias: energy
 
 hfs:
   name: Department of Horticulture and Food Security
   abbreviation: HFS
   school: soaes
+  alias: hfs
 
 lfs:
   name: Department of Landscape and Environmental Sciences
   abbreviation: LFS
   school: soaes
-
+  alias: lfs
 
 dare:
   name: Department of Agricultural and Resource Economics
   abbreviation: DARE
   school: soaes
+  alias: dare
 
 fst:
   name: Department of Foos Sience and Technology
   abbreviation: FST
   school: sofnus
-
+  alias: fst
 
 hns:
   name: Department of Human Nutrition Sciences
   abbreviation: HNS
   school: sofnus
+  alias: hns
 
 lprm:
   name: Department of Land Resources, Planning and Management
   abbreviation: LPRM
   school: sonras
+  alias: lprm
 
 ans:
   name: Department of Animal Sciences
   abbreviation: ANS
   school: sonras
+  alias: ans
 
 enw:
   name: Engineering Workshop
   abbreviation:
   school: misc_school
+  alias: enw
 
 ipic:
   name: Innovation and Prototyping Integrated Centre
   abbreviation: iPIC
   school: misc_school
+  alias: ipic
 
 icmob:
   name: Innovation Center for Molecular Biology and Biochemistry
   abbreviation: iCMoB
   school: misc_school
+  alias: icmob
 
 icb:
   name: Innovation Center for Bio-resources 
   abbreviation: iCB
   school: misc_school
+  alias: icb
 
 
 

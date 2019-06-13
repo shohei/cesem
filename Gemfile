@@ -65,3 +65,6 @@ gem 'devise'
 
 
 gem 'country_select'
+
+gem 'will_paginate'
+gem 'will_paginate-bulma'

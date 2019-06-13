@@ -4,7 +4,8 @@ class EquipmentsController < ApplicationController
   # GET /equipments
   # GET /equipments.json
   def index
-    @equipments = Equipment.all
+    # @equipments = Equipment.all
+    @equipments = Equipment.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /equipments/1

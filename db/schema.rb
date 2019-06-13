@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2019_06_13_104435) do
     t.integer "school_id"
     t.string "name"
     t.string "abbreviation"
+    t.string "alias"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
