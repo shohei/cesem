@@ -12,61 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
+    <%= form.label 'Date of request', class: 'label' %>
+    <%= form.text_field '' , value: Time.now.strftime("%d/%m/%Y"), class: 'input' , disabled: true %>
   </div>
 
   <div class="field">
-    <%= form.label :equipment_id %>
-    <%= form.number_field :equipment_id %>
+    <%= form.label :equipment_id, class: 'label' %>
+    <%= form.collection_select :equipment_id, Equipment.order(:name),:id,:name, include_blank: true %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.label :description , class: 'label' %>
+    <%= form.text_area :description , class: 'textarea' %>
   </div>
 
   <div class="field">
-    <%= form.label :precaution %>
-    <%= form.text_area :precaution %>
-  </div>
-
-  <div class="field">
-    <%= form.label :trace_number %>
-    <%= form.text_field :trace_number %>
-  </div>
-
-  <div class="field">
-    <%= form.label :diagnosis %>
-    <%= form.text_area :diagnosis %>
-  </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.number_field :status %>
-  </div>
-
-  <div class="field">
-    <%= form.label :scheduled_at %>
-    <%= form.date_select :scheduled_at %>
-  </div>
-
-  <div class="field">
-    <%= form.label :completion_expected_at %>
-    <%= form.date_select :completion_expected_at %>
-  </div>
-
-  <div class="field">
-    <%= form.label :recomission_projected_at %>
-    <%= form.date_select :recomission_projected_at %>
-  </div>
-
-  <div class="field">
-    <%= form.label :other_status %>
-    <%= form.text_area :other_status %>
+    <%= form.label :precaution , class: 'label' %>
+    <%= form.text_area :precaution , class: 'textarea' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Submit', class: 'button is-success' %>
   </div>
 <% end %>
