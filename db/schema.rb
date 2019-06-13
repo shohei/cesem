@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_06_13_024450) do
     t.string "manufacturer"
     t.string "country_of_origin"
     t.string "warranty_period"
-    t.integer "additional_info"
+    t.integer "additional_info", default: [], array: true
     t.text "other_info"
     t.integer "dealer_id"
     t.datetime "created_at", null: false

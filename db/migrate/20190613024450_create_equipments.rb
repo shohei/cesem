@@ -12,7 +12,7 @@ class CreateEquipments < ActiveRecord::Migration[5.2]
       t.string :manufacturer
       t.string :country_of_origin
       t.string :warranty_period
-      t.integer :additional_info
+      t.integer :additional_info, array: true, default: []
       t.text :other_info
       t.integer :dealer_id
 
