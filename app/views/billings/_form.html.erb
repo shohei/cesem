@@ -1,3 +1,99 @@
+       
+    <div class="field">
+        <label class="label">Equipment Name</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Model</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Serial No.</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Trace No.</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="">
+        </div>
+    </div>
+
+    <div class="is-size-5">Status of Repair / maintenance</div>
+
+    <div class="field">
+        <label class="label">Completed</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Date of completion</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Ongoing</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Date of Completion</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="">
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="is-size-5">Breakdown of charges</div>
+
+
+       <p class="control">
+          <a class="button is-danger">
+            Inter-departmental Funds Transfer
+          </a>
+        </p>
+
+
+    <div class="field is-grouped" style="margin: 60px 0px;">
+          <p class="control">
+            <a class="button is-warning">
+                Back
+          </a>
+        </p>
+        <p class="control">
+         <a class="button is-info">
+            Next
+        </a>
+        </p>
+        <p class="control">
+         <a class="button is-success">
+            Submit
+        </a>
+        </p>
+        <p class="control">
+            <a class="button is-danger">
+                Sign Out
+            </a>
+        </p>
+    </div>
+
+   </div> 
+
 <%= form_with(model: billing, local: true) do |form| %>
   <% if billing.errors.any? %>
     <div id="error_explanation">

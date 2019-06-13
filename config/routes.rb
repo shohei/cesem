@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'acknowledgement', to: 'maintenances#acknowledgement'
   get 'followup', to: 'maintenances#followup'
+  get 'survey', to: 'home#survey'
   # devise_scope :user do
   #   root to: "devise/sessions#new"
   # end
