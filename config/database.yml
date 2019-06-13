@@ -1,23 +1,28 @@
-development:
+default: &default
   adapter: postgresql
   encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  adapter: postgresql
   database: cesem_development
-  pool: 5
   username: cesem 
   password: cesem 
 
 test:
-  adapter: postgresql
-  encoding: unicode
+  <<: *default
   database: cesem_test
-  pool: 5
   username: cesem 
   password: cesem 
 
 production:
-  adapter: postgresql
-  encoding: unicode
+production:
+  <<: *default
   database: cesem_production
-  pool: 5
-  username: cesem 
-  password: cesem 
+  username: cesem
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+
+
