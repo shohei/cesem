@@ -1,0 +1,304 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+general_nursing:
+  name: Department of General Nursing
+  abbreviation: 
+  school: nursing  
+
+community_health_nursing:
+  name: Department of Community Health Nursing
+  abbreviation:
+  school: nursing
+
+midwifery:
+  name: Department of Midwifery
+  abbreviation:
+  school: nursing
+
+nursing_eductaion_leadership:
+  name: Department of Nursing Eductaion Leadership, Management and Reserach
+  abbreviation:
+  school: nursing 
+
+child_health:
+  name: Department of Child Health and Paediatrics
+  abbreviation:
+  school: medicine
+
+clinical_medicine:
+  name: Department of Clinical Medicine
+  abbreviation:
+  school: medicine
+
+clitical_care:
+  name: Department of Clitical Care and Anaesthesiology
+  abbreviation:
+  school: medicine 
+
+human_anatomy:
+  name: Department of Human Anatomy
+  abbreviation:
+  school: medicine
+
+human_pathology:
+  name: Department of Human Pathology
+  abbreviation:
+  school: medicine
+
+internal_medicine:
+  name: Department of Internal Medicine and Therapeutics
+  abbreviation:
+  school: medicine
+
+medical_physiology:
+  name: Department of Medical Physiology
+  abbreviation:
+  school: medicine
+
+obsterics:
+  name: Department of Obsterics and Gynaecology
+  abbreviation:
+  school: medicine
+
+Psychiatry:
+  name: Department of Psychiatry
+  abbreviation:
+  school: medicine
+
+radiology:
+  name: Department of Radiology Imaging and Radiotherapy
+  abbreviation:
+  school: medicine
+
+rehabilitative:
+  name: Department of Rehabilitative Sciences
+  abbreviation:
+  school: medicine
+
+surgery:
+  name: Department of Surgery
+  abbreviation:
+  school: medicine
+
+pharmacy:
+  name: Department of Pharmacy
+  abbreviation:
+  school: pharmacy
+
+environmental_health_disease_control:
+  name: Department of Environmental Health and Disease Control
+  abbreviation:
+  school: public_health
+
+community_health_development:
+  name: Department of Community Health and Development
+  abbreviation:
+  school: public_health
+
+health_record:
+  name: Department of Health Record and Information Management
+  abbreviation:
+  school: public_health
+
+biochemistry:
+  name: Department of Biochemistry
+  abbreviation:
+  school: biomedical_science
+
+mls:
+  name: Department of Medical Laboratory Sciences
+  abbreviation:
+  school: biomedical_science
+
+medical_microbiology:
+  name: Department of Medical Microbiology
+  abbreviation:
+  school: biomedical_science
+
+physics:
+  name: Department of Physics
+  abbreviation:
+  school: physical_sciences
+
+chemistry:
+  name: Department of Chemistry
+  abbreviation:
+  school: 
+
+zoology:
+  name: Department of Zoology
+  abbreviation:
+  school: biological_sciences
+
+botany:
+  name: Department of Botany
+  abbreviation:
+  school: biological_sciences
+
+statistics:
+  name: Department of Statistics and Actuarial Sciences
+  abbreviation:
+  school: math
+
+pure_math:
+  name: Department of Pure and Appliec Mathematics
+  abbreviation:
+  school: math
+
+it:
+  name: Department of Information Technology
+  abbreviation:
+  school: scit
+
+computing:
+  name: Department of Computing
+  abbreviation:
+  school: scit
+
+business_administration:
+  name: Department of Business Administration
+  abbreviation:
+  school: business
+
+economics:
+  name: Department of Economics, Accounting and Finance
+  abbreviation:
+  school: business
+
+entrepreneurship_leadership:
+  name: Department of Entrepreneurship, Technology, Leadership and Management
+  abbreviation:
+  school: entrepreneurship
+
+procurement:
+  name: Department of Procurement and Logistics
+  abbreviation:
+  school: entrepreneurship
+
+media:
+  name: Department of Media Technology and Applied Communication
+  abbreviation:
+  school: communication_development
+
+development_studies:
+  name: Department of Development Studies
+  abbreviation:
+  school: communication_development
+
+center_foreign_language:
+  name: Center for Foreign Language and Linguistics
+  abbreviation:
+  school: communication_development
+
+architecture:
+  name: Department of Architecture
+  abbreviation:
+  school: sabs
+
+landscape:
+  name: Department of Landscape Architecture
+  abbreviation:
+  school: sabs
+
+construction:
+  name: Department of Construction Management
+  abbreviation:
+  school: sabs
+
+mechanical:
+  name: Department of Mechanical Engineering
+  abbreviation:
+  school: sommme
+
+mechatronic:
+  name: Department of Mechatronic Engineering
+  abbreviation:
+  school: sommme
+
+marine:
+  name: Department of Marine Engineering
+  abbreviation:
+  school: sommme
+
+mining:
+  name: Department of Mining, Materials and Petroleum Engineering
+  abbreviation:
+  school: sommme
+
+elec:
+  name: Department of Electrical and Electronic Engineering
+  abbreviation:
+  school: seeie
+
+telecom:
+  name: Department of Telecommunication and Information Technology
+  abbreviation:
+  school: seeie
+
+civil:
+  name: Department of Civil, Construction and Environmental Engineering
+  abbreviation:
+  school: scege
+
+geo:
+  name: Department of Geomatic Engineering and Geospatial Information Systems
+  abbreviation:
+  school: scege
+
+chemical_engineering:
+  name: Department of Chemical Engineering
+  abbreviation:
+  school: sobee
+
+agri_bio_engineering:
+  name: Department of Agricultural Biosystems Engineering
+  abbreviation:
+  school: sobee
+
+water:
+  name: Department of Water and Environmental Management
+  abbreviation:
+  school: sobee
+
+energy:
+  name: Department of Energy and Environmental Technology
+  abbreviation:
+  school: sobee
+
+hfs:
+  name: Department of Horticulture and Food Security
+  abbreviation: HFS
+  school: soaes
+
+lfs:
+  name: Department of Landscape and Environmental Sciences
+  abbreviation: LFS
+  school: soaes
+
+
+dare:
+  name: Department of Agricultural and Resource Economics
+  abbreviation: DARE
+  school: soaes
+
+fst:
+  name: Department of Foos Sience and Technology
+  abbreviation: FST
+  school: sofnus
+
+
+hns:
+  name: Department of Human Nutrition Sciences
+  abbreviation: HNS
+  school: sofnus
+
+
+lprm:
+  name: Department of Land Resources, Planning and Management
+  abbreviation: LPRM
+  school: sonras
+
+ans:
+  name: Department of Animal Sciences
+  abbreviation: ANS
+  school: sonras

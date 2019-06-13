@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# one:
+#   name: MyString
+
+# two:
+#   name: MyString
+
+
+COHES:
+  name: College of Health Sciences
+  abbreviation: COHES
+
+COPAS:
+  name: College of Pure and Applied Sciences
+  abbreviation: COPAS
+
+COHRED:
+  name: College of Human Resource and Development
+  abbreviation: COHRED
+
+COETEC:
+  name: College of Engineering and Technology
+  abbreviation: COETEC
+
+COANRE:
+  name: College of Agriculture and Natural Resources 
+  abbreviation: COANRE
+

@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  service_id: 1
-  name: MyString
-  price: 1
+# one:
+#   service_id: 1
+#   name: MyString
+#   price: 1
 
-two:
-  service_id: 1
-  name: MyString
-  price: 1
+# two:
+#   service_id: 1
+#   name: MyString
+#   price: 1

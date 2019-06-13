@@ -1,0 +1,106 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+nursing: 
+  name: School of Nursing
+  abbreviation: 
+  college: COHES  
+
+medicine:
+  name: School of Medicine
+  abbreviation: 
+  college: COHES  
+
+pharmacy:
+  name: School of Pharmacy
+  abbreviation: 
+  college: COHES  
+
+public_health:
+  name: School of Public Health
+  abbreviation: 
+  college: COHES  
+
+biomedical_science:
+  name: School of Biomedical Sciences
+  abbreviation: 
+  college: COHES  
+
+physical_sciences:
+  name: School of Physical Sciences
+  abbreviation: 
+  college: COPAS
+
+biological_sciences:
+  name: School of Biological Sciences
+  abbreviation: 
+  college: COPAS
+
+math:
+  name: School of Mathematical Sciences
+  abbreviation: 
+  college: COPAS
+
+scit:
+  name: School of Computing and Information Technology
+  abbreviation: SCIT
+  college: COPAS
+
+business:
+  name: School of Business
+  abbreviation: 
+  college: COHRED
+
+entrepreneurship:
+  name: School of Entrepreneurship, Procurement and Management
+  abbreviation: 
+  college: COHRED
+
+communication_development:
+  name: School of Communication and Development Studies
+  abbreviation: 
+  college: COHRED
+
+sabs:
+  name: School of Architecture and Building Sciences
+  abbreviation: SABS
+  college: COETEC
+
+sommme:
+  name: School of Mechanical, Manufacuring and Materials Engineering
+  abbreviation: SoMMME
+  college: COETEC
+
+seeie:
+  name: School of Electrical, Electronic and Information Engineering
+  abbreviation: SEEIE
+  college: COETEC
+
+scege:
+  name: School of Civil, Environmental and Geospatial Engineering
+  abbreviation: SCEGE
+  college: COETEC
+
+sobee:
+  name: School of Biosystems and Environmental Engineering
+  abbreviation: SoBEE
+  college: COETEC
+
+smartec:
+  name: Center for Sustainable Materials, Research and Technology
+  abbreviation: SMARTEC
+  college: COETEC
+
+soaes:
+  name: School of Agriculture and Environmental Sciences
+  abbreviation: SOAES 
+  college: COANRE
+
+sofnus:
+  name: School of Food and Nutrition Sciences
+  abbreviation: SOFNUS 
+  college: COANRE
+
+sonras:
+  name: School of Natural Resources and Animal Sciences
+  abbreviation: SONRAS
+  college: COANRE

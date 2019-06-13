@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_13_024450) do
+ActiveRecord::Schema.define(version: 2019_06_13_104435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,11 +21,26 @@ ActiveRecord::Schema.define(version: 2019_06_13_024450) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "colleges", force: :cascade do |t|
+    t.string "name"
+    t.string "abbreviation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "dealers", force: :cascade do |t|
     t.string "name"
     t.string "phone_number"
     t.string "address"
     t.string "contact_person_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "departments", force: :cascade do |t|
+    t.integer "school_id"
+    t.string "name"
+    t.string "abbreviation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -69,6 +84,14 @@ ActiveRecord::Schema.define(version: 2019_06_13_024450) do
     t.date "completion_expected_at"
     t.date "recomission_projected_at"
     t.text "other_status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.integer "college_id"
+    t.string "name"
+    t.string "abbreviation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
