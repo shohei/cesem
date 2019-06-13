@@ -11,8 +11,8 @@
     <body>
 
       <div class="container" style="margin-top: 60px; margin-bottom: 40px;">
-      <a class="is-size-4 is-pulled-right has-text-danger" href="/">CeSEM</a>
-        <% if user_signed_in? %>
+      <% if user_signed_in? %>
+          <a class="is-size-4 is-pulled-right has-text-danger" href="/">CeSEM</a>
           <h2> <%= current_user.name %> is logged in.</h2> 
           <h4> email: <%= current_user.email %> </h4>
           <%= link_to "Sign Out", destroy_user_session_path, method: :delete , class: 'button is-danger' %> 
