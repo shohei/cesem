@@ -1,0 +1,87 @@
+<%= form_with(model: equipment, local: true) do |form| %>
+  <% if equipment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(equipment.errors.count, "error") %> prohibited this equipment from being saved:</h2>
+
+      <ul>
+      <% equipment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model_name %>
+    <%= form.text_field :model_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model_number %>
+    <%= form.text_field :model_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :serial_number %>
+    <%= form.text_field :serial_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :inventory_number %>
+    <%= form.text_field :inventory_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :acquired_at %>
+    <%= form.date_select :acquired_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :manufacturer %>
+    <%= form.text_field :manufacturer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country_of_origin %>
+    <%= form.text_field :country_of_origin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :warranty_period %>
+    <%= form.text_field :warranty_period %>
+  </div>
+
+  <div class="field">
+    <%= form.label :additional_info %>
+    <%= form.number_field :additional_info %>
+  </div>
+
+  <div class="field">
+    <%= form.label :other_info %>
+    <%= form.text_area :other_info %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dealer_id %>
+    <%= form.number_field :dealer_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :equipments
   resources :dealers
   resources :items
   resources :services

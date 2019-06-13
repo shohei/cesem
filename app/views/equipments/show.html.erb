@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @equipment.user_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @equipment.name %>
+</p>
+
+<p>
+  <strong>Model name:</strong>
+  <%= @equipment.model_name %>
+</p>
+
+<p>
+  <strong>Model number:</strong>
+  <%= @equipment.model_number %>
+</p>
+
+<p>
+  <strong>Serial number:</strong>
+  <%= @equipment.serial_number %>
+</p>
+
+<p>
+  <strong>Inventory number:</strong>
+  <%= @equipment.inventory_number %>
+</p>
+
+<p>
+  <strong>Acquired at:</strong>
+  <%= @equipment.acquired_at %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @equipment.location %>
+</p>
+
+<p>
+  <strong>Manufacturer:</strong>
+  <%= @equipment.manufacturer %>
+</p>
+
+<p>
+  <strong>Country of origin:</strong>
+  <%= @equipment.country_of_origin %>
+</p>
+
+<p>
+  <strong>Warranty period:</strong>
+  <%= @equipment.warranty_period %>
+</p>
+
+<p>
+  <strong>Additional info:</strong>
+  <%= @equipment.additional_info %>
+</p>
+
+<p>
+  <strong>Other info:</strong>
+  <%= @equipment.other_info %>
+</p>
+
+<p>
+  <strong>Dealer:</strong>
+  <%= @equipment.dealer_id %>
+</p>
+
+<%= link_to 'Edit', edit_equipment_path(@equipment) %> |
+<%= link_to 'Back', equipments_path %>
