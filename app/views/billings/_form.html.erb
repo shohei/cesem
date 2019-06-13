@@ -79,6 +79,8 @@
 
    </div> 
 
+   <% if false %> 
+
 <%= form_with(model: billing, local: true) do |form| %>
   <% if billing.errors.any? %>
     <div id="error_explanation">
@@ -100,4 +102,6 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+<% end %>
+
 <% end %>
