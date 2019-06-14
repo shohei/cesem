@@ -1,74 +1,66 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><td><%= notice %></td></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @equipment.user_id %>
-</p>
+ <table class="table is-striped" width="100%">
+   <tr>
+    <th>Name</th>
+    <td><%= @equipment.name %></td>
+   </tr> 
+   <tr>
+      <th>Model name</th>
+      <td><%= @equipment.name_of_model %></td>
+    </tr>
+    <tr>
+      <th>Model number</th> 
+      <td><%= @equipment.model_number %></td>
+    </tr>
+    <tr>
+      <th>Serial number</th>
+      <td><%= @equipment.serial_number %></td>
+    </tr>
+    <tr>
+      <th>Inventory number</th>
+      <td><%= @equipment.inventory_number %></td>
+    </tr>
+    <tr>
+      <th>Acquired year</th> 
+      <td><%= @equipment.acquired_year %></td>
+    </tr>
+    <tr>
+      <th>Location</th>
+      <td><%= @equipment.location %></td>
+    </tr>
+    <tr>
+      <th>Manufacturer</th> 
+      <td><%= @equipment.manufacturer %></td>
+    </tr>
+    <tr>
+      <th>Country of origin</th> 
+      <td><%= @equipment.country_of_origin %></td>
+    </tr>
+    <tr>
+      <th>Warranty period</th>
+      <td><%= @equipment.warranty_period %></td>
+    </tr>
+    <tr>
+      <th>Additional info</th>
+      <td><%= @equipment.additional_info %></td>
+    </tr>
+    <tr>
+      <th>Other info</th>
+      <td><%= @equipment.other_info %></td>
+    </tr>
+    <tr>
+      <th>Dealer</th>
+        <td>
+          <% if not @equipment.dealer_id.nil? %>
+            <%= Dealer.find_by_id(@equipment.dealer_id).name %>
+          <% end %>
+        </td>
+    </tr>
+  </tr>
+  <tr>
+  </tr>
+</table> 
 
-<p>
-  <strong>Name:</strong>
-  <%= @equipment.name %>
-</p>
-
-<p>
-  <strong>Model name:</strong>
-  <%= @equipment.name_of_model %>
-</p>
-
-<p>
-  <strong>Model number:</strong>
-  <%= @equipment.model_number %>
-</p>
-
-<p>
-  <strong>Serial number:</strong>
-  <%= @equipment.serial_number %>
-</p>
-
-<p>
-  <strong>Inventory number:</strong>
-  <%= @equipment.inventory_number %>
-</p>
-
-<p>
-  <strong>Acquired year:</strong>
-  <%= @equipment.acquired_year %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @equipment.location %>
-</p>
-
-<p>
-  <strong>Manufacturer:</strong>
-  <%= @equipment.manufacturer %>
-</p>
-
-<p>
-  <strong>Country of origin:</strong>
-  <%= @equipment.country_of_origin %>
-</p>
-
-<p>
-  <strong>Warranty period:</strong>
-  <%= @equipment.warranty_period %>
-</p>
-
-<p>
-  <strong>Additional info:</strong>
-  <%= @equipment.additional_info %>
-</p>
-
-<p>
-  <strong>Other info:</strong>
-  <%= @equipment.other_info %>
-</p>
-
-<p>
-  <strong>Dealer:</strong>
-  <%= @equipment.dealer_id %>
-</p>
-
-<%= link_to 'Edit', edit_equipment_path(@equipment) %> |
-<%= link_to 'Back', equipments_path %>
+<td><%= link_to 'Edit', edit_equipment_path(@equipment) , class: 'button'%></td> 
+<td><%= link_to 'Back', equipments_path , class: 'button' %></td>

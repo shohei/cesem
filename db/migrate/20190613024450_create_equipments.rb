@@ -26,6 +26,8 @@ class CreateEquipments < ActiveRecord::Migration[5.2]
       t.string :where_purchased
       t.integer :department_id
 
+      t.integer :status
+
       t.timestamps
     end
   end
