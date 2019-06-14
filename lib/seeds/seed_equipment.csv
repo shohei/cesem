@@ -1,4 +1,4 @@
-name,quantity,model_name,model_number,serial_number,country_of_origin,manufacturer,where_purchased,price,acquired_year,location,remark,department,decription,inventory_number,,,
+name,quantity,name_of_model,model_number,serial_number,country_of_origin,manufacturer,where_purchased,price,acquired_year,location,remark,department,decription,inventory_number,,,
 Aggregate measure,1,,,,JP,,,,,irrigation,In order,water,,,,,
 Beam apparatus,1,,,,JP,,,,,irrigation,In order,water,,,,,
 Consolidated Test Apparatus,1,Double lever type,,,JP,Imani & co.ltd,,,,irrigation,In order,water,,,,,

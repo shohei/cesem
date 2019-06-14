@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2019_06_13_104435) do
   create_table "equipments", force: :cascade do |t|
     t.integer "user_id"
     t.string "name"
-    t.string "model_name"
+    t.string "name_of_model"
     t.text "model_number"
     t.string "serial_number"
     t.string "inventory_number"

@@ -21,7 +21,7 @@ class EquipmentsTest < ApplicationSystemTestCase
     fill_in "Inventory number", with: @equipment.inventory_number
     fill_in "Location", with: @equipment.location
     fill_in "Manufacturer", with: @equipment.manufacturer
-    fill_in "Model name", with: @equipment.model_name
+    fill_in "Model name", with: @equipment.name_of_model
     fill_in "Model number", with: @equipment.model_number
     fill_in "Name", with: @equipment.name
     fill_in "Other info", with: @equipment.other_info
@@ -45,7 +45,7 @@ class EquipmentsTest < ApplicationSystemTestCase
     fill_in "Inventory number", with: @equipment.inventory_number
     fill_in "Location", with: @equipment.location
     fill_in "Manufacturer", with: @equipment.manufacturer
-    fill_in "Model name", with: @equipment.model_name
+    fill_in "Model name", with: @equipment.name_of_model
     fill_in "Model number", with: @equipment.model_number
     fill_in "Name", with: @equipment.name
     fill_in "Other info", with: @equipment.other_info
