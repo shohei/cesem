@@ -1,11 +1,19 @@
 class EquipmentsController < ApplicationController
   before_action :set_equipment, only: [:show, :edit, :update, :destroy]
+  before_action :set_search
+
+  def set_search
+    @search = Equipment.ransack(params[:q]) #ransackメソッド推奨
+    @search_equipments = @search.result.page(params[:page])
+  end
 
   # GET /equipments
   # GET /equipments.json
   def index
     # @equipments = Equipment.all
-    @equipments = Equipment.paginate(page: params[:page], per_page: 10)
+    @equipments = Equipment.page params[:page]
+    # @search = Equipment.ransack(params[:q]) #ransackメソッド推奨
+    # @search_equipments = @search.result.page(params[:page])
   end
 
   # GET /equipments/1

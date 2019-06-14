@@ -1,0 +1,4 @@
+<%= search_form_for @search, url: search_path do |f| %>
+    <dt><%= f.text_field :acquired_year, placeholder: 'Enter search phrase...' , class: 'input' %></dt>
+    <dd><%= f.submit ("Search") , class: 'button search-btn'%></dd>
+<% end %>

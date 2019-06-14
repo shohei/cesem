@@ -18,6 +18,7 @@
   </thead>
 
   <tbody>
+    <% if not @search_equipments.nil? %>
     <% @search_equipments.each do |equipment| %>
       <tr>
         <td><%= equipment.name %></td>
@@ -33,10 +34,14 @@
         <td><%= link_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    <% end %>
   </tbody>
 
 </table>
 </div>
 
+<% if not @search_equipments.nil? %>
 <%= paginate @search_equipments  %>
+<% end %>
+
 

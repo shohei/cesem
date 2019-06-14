@@ -62,11 +62,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
-
-
 gem 'country_select'
-
-gem 'will_paginate'
-gem 'will_paginate-bulma'
-
 gem 'tqdm'
+gem 'kaminari'
+gem 'ransack'

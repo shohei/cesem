@@ -23,7 +23,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :name_of_model, class: 'label' %>
+    <%= form.label 'Model name', class: 'label' %>
     <%= form.text_field :name_of_model , class: 'input', value: '' %>
   </div>
 
@@ -44,7 +44,7 @@
 
   <div class="field">
     <%= form.label :acquired_at , class: 'label' %>
-    <%= form.date_select :acquired_at , {start_year: 1981, end_year: Date.today.year}  %>
+    <%= form.select :acquired_at , 1981 .. Date.today.year ,include_blank: true %>
   </div>
 
   <div class="field">
@@ -59,7 +59,7 @@
 
   <div class="field">
     <%= form.label :country_of_origin , class: 'label' %>
-    <%= form.country_select :country_of_origin , class: 'input' %>
+    <%= form.country_select :country_of_origin , class: 'input', include_blank: true  %>
   </div>
 
   <div class="field">
