@@ -1,7 +1,12 @@
 <div class="columns is-centered">
-  <div class="column">
+  <div class="column is-one-fifth">
+    <h3 class="is-size-5">Summary this month</h3>
+    <p>Total repair: 5</p>
+    <p>Pending repair: 10</p>
+  </div>
 
-   <div style="margin:20px 200px; border: 2px solid hsl(141, 71%, 48%); border-radius: 10px; padding: 40px 100px;">
+  <div class="column">
+   <div style="margin:20px 0px; border: 2px solid hsl(141, 71%, 48%); border-radius: 10px; padding: 40px 100px;">
 
      <h1 class="is-size-3 has-text-danger has-text-centered">Main menu</h1>
 
@@ -17,7 +22,15 @@
      <p class="is-size-5 has-text-centered has-text-white" style="background-color: hsl(14, 100%, 53%);">Admin section</p>
      <div class="has-text-danger is-size-5"><a href="/">Update maintenance status</a></div>
      <div class="has-text-danger is-size-5"><a href="/billings/new">Create Billing</a></div>
-
    </div>
  </div>
+
+  <div class="column is-one-fifth">
+    <h3 class="is-size-5">Latest activity</h3>
+    <%= image_tag 'spectrophotometer.png' %>
+    <h4 class="">Spectrophotometer</h4>
+    <%= image_tag 'ff_exp_bench.png', {style: 'margin-top:20px;'}%>
+    <h4 class="">Fluid Flow Experimental Bench</h4>
+  </div>
+
 </div>
