@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   enum role: [:admin, :manager, :guest]
 
+  validates :email, format: { with: /\b[A-Z0-9._%a-z\-]+@.*jkuat\.ac\.ke\z/,
+                  message: "must be a jkuat.ac.ke account" }
+
 end

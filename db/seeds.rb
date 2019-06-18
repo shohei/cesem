@@ -8,7 +8,9 @@
 require 'csv'
 require 'tqdm'
 
-User.create(name: 'Shohei Aoki', email: 'shoaok@gmail.com', role: 'admin', password: 'hogehoge')
+User.create(name: 'Jomo Kenyatta', email: 'admin@jkuat.ac.ke', role: 'admin', password: 'jkuatkenya')
+User.create(name: 'Jomo Kenyatta', email: 'manager@jkuat.ac.ke', role: 'manager', password: 'jkuatkenya')
+User.create(name: 'Jomo Kenyatta', email: 'guest@jkuat.ac.ke', role: 'guest', password: 'jkuatkenya')
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'seed_equipment.csv'))
 csv = CSV.parse(csv_text, :headers => true)
