@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'followup', to: 'maintenances#followup'
   get 'survey', to: 'home#survey'
   get 'search', to: 'equipments#search'
+  get 'download_pdf', to: "home#download_pdf"
   # devise_scope :user do
   #   root to: "devise/sessions#new"
   # end
