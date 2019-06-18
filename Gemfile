@@ -66,3 +66,6 @@ gem 'country_select'
 gem 'tqdm'
 gem 'kaminari'
 gem 'ransack'
+gem 'filterrific'
+
+gem 'jquery-rails'

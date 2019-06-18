@@ -1,7 +1,92 @@
-<%= render 'search_form' %>
+<%= search_form_for @q do |f| %>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= f.label :name_cont, "Name", class: 'label' %> 
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <p class="control is-expanded has-icons-left">
+            <%= f.search_field :name_cont, placeholder: 'Enter name...' , class: 'input name-input' %>
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <div class="field-label is-normal">
+        <%= f.label :name_of_model_cont, "Model name" , class: 'label' %> 
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <p class="control is-expanded has-icons-left">
+            <%= f.search_field :name_of_model_cont, placeholder: 'Enter model name...' , class: 'input model-name-input' %>
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+<!-- <div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">Acquired year</label>
+  </div>
+  <div class="field-body">
+    <div class="field is-narrow">
+      <div class="control">
+        <div class="select is-fullwidth">
+          <select>
+            <option>2010</option>
+            <option>2000</option>
+            <option>1990</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">Department</label>
+  </div>
+  <div class="field-body">
+    <div class="field is-narrow">
+      <div class="control">
+        <div class="select is-fullwidth">
+          <select>
+            <option>BEED</option>
+            <option>SoMMME</option>
+            <option>FST</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ -->
+  <div class="field is-horizontal">
+    <div class="field-label">
+      <!-- Left empty for spacing -->
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control">
+          <%= f.submit ("Search") , class: 'button is-primary'%>
+          <button class="button clear-button">
+            Clear
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 
 <div class="table-wrapper-scroll-y my-custom-scrollbar">
-
 <table class="table is-striped">
   <thead>
     <tr>
