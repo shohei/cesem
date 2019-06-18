@@ -1,76 +1,31 @@
 <%= search_form_for @q do |f| %>
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
+<div class="field is-horizontal">
+  <nav class="panel">
+    <div class="panel-block">
+
+      <div class="field-label">
         <%= f.label :name_cont, "Name", class: 'label' %> 
       </div>
       <div class="field-body">
         <div class="field">
-          <p class="control is-expanded has-icons-left">
+          <p class="control is-expanded">
             <%= f.search_field :name_cont, placeholder: 'Enter name...' , class: 'input name-input' %>
-            <span class="icon is-small is-left">
-              <i class="fas fa-user"></i>
-            </span>
           </p>
         </div>
       </div>
 
-      <div class="field-label is-normal">
-        <%= f.label :name_of_model_cont, "Model name" , class: 'label' %> 
+      <div class="field-label" style="margin-left: 20px;">
+        <%= f.label :name_of_model_cont, "Model" , class: 'label' %> 
       </div>
       <div class="field-body">
         <div class="field">
-          <p class="control is-expanded has-icons-left">
+          <p class="control is-expanded">
             <%= f.search_field :name_of_model_cont, placeholder: 'Enter model name...' , class: 'input model-name-input' %>
-            <span class="icon is-small is-left">
-              <i class="fas fa-user"></i>
-            </span>
           </p>
         </div>
       </div>
-    </div>
 
-
-<!-- <div class="field is-horizontal">
-  <div class="field-label is-normal">
-    <label class="label">Acquired year</label>
-  </div>
-  <div class="field-body">
-    <div class="field is-narrow">
-      <div class="control">
-        <div class="select is-fullwidth">
-          <select>
-            <option>2010</option>
-            <option>2000</option>
-            <option>1990</option>
-          </select>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="field is-horizontal">
-  <div class="field-label is-normal">
-    <label class="label">Department</label>
-  </div>
-  <div class="field-body">
-    <div class="field is-narrow">
-      <div class="control">
-        <div class="select is-fullwidth">
-          <select>
-            <option>BEED</option>
-            <option>SoMMME</option>
-            <option>FST</option>
-          </select>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
- -->
-  <div class="field is-horizontal">
     <div class="field-label">
-      <!-- Left empty for spacing -->
     </div>
     <div class="field-body">
       <div class="field">
@@ -82,27 +37,30 @@
         </div>
       </div>
     </div>
-  </div>
+    </div>
+  </nav>
+</div>
 <% end %>
 
 
-<div class="table-wrapper-scroll-y my-custom-scrollbar">
-<table class="table is-striped">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Acquired year</th>
-      <th>Model name</th>
-      <th>Model number</th>
-      <th>Serial number</th>
-      <th>Location</th>
-      <th>Manufacturer</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
+<div class="table-wrapper-scroll-y my-custom-scrollbar" style="margin-top: 20px;">
 
-  <tbody>
-    <% @search_equipments.each do |equipment| %>
+  <table class="table is-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Acquired year</th>
+        <th>Model name</th>
+        <th>Model number</th>
+        <th>Serial number</th>
+        <th>Location</th>
+        <th>Manufacturer</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @search_equipments.each do |equipment| %>
       <tr>
         <td><%= link_to equipment.name , equipment %></td>
         <td><%= equipment.acquired_year %></td>
@@ -113,13 +71,13 @@
         <td><%= equipment.manufacturer %></td>
         <td><%= link_to 'Edit', edit_equipment_path(equipment), class: 'button is-small' %></td>
         <% if current_user.role=="admin" %>
-          <td><%= link_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' } , class: 'button is-danger is-small' %></td>
+        <td><%= link_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' } , class: 'button is-danger is-small' %></td>
         <% end %>
       </tr>
-    <% end %>
-  </tbody>
+      <% end %>
+    </tbody>
 
-</table>
+  </table>
 </div>
 
 <%= paginate @search_equipments  %>
