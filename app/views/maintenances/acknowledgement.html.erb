@@ -1,15 +1,16 @@
 <h1 class="is-size-4" style="margin:40px 0;">New Maintenance / Repair request acknowledgement</h1>
    
    <p>Thank you for choosing our services.</p>
-   <p>Your request for maintenance / repair has been successfully registered for Inventory No.: </p>
-   <br/>
-   <p><b>JKU/_____________.</b></p>
+   <p>Your request for maintenance / repair has been successfully registered.</p>
+   <% if not @inventory_number.blank? %>
+     <p>Inventory No. <b><%= @inventory_number %>.</b></p>
+   <% end %>
    <br/>
    <p>You may make inquiries of your request using the following system generated reference number, or by directly calling the extension provided below:</p>
 
    <br/>
 
    <hr/>
-   <p> Trace Number: <b>CeSEM/MM/0000/YYY</b></p>
+   <p> Trace Number: <b><%= @trace_number %></b></p>
    <p> CeSEM Extension: 2146 </p>
    <hr/>
