@@ -14,7 +14,7 @@ class EquipmentsTest < ApplicationSystemTestCase
     visit equipments_url
     click_on "New Equipment"
 
-    fill_in "Acquired at", with: @equipment.acquired_at
+    fill_in "Acquired at", with: @equipment.acquired_year
     fill_in "Additional info", with: @equipment.additional_info
     fill_in "Country of origin", with: @equipment.country_of_origin
     fill_in "Dealer", with: @equipment.dealer_id
@@ -38,7 +38,7 @@ class EquipmentsTest < ApplicationSystemTestCase
     visit equipments_url
     click_on "Edit", match: :first
 
-    fill_in "Acquired at", with: @equipment.acquired_at
+    fill_in "Acquired at", with: @equipment.acquired_year
     fill_in "Additional info", with: @equipment.additional_info
     fill_in "Country of origin", with: @equipment.country_of_origin
     fill_in "Dealer", with: @equipment.dealer_id

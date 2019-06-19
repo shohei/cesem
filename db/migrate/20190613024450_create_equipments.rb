@@ -4,8 +4,8 @@ class CreateEquipments < ActiveRecord::Migration[5.2]
       t.integer :user_id
       t.string :name
       t.string :name_of_model
-      t.text :model_number
-      t.text :serial_number
+      t.string :model_number
+      t.string :serial_number
       t.string :inventory_number
       t.integer :acquired_year
       t.string :location
@@ -15,10 +15,7 @@ class CreateEquipments < ActiveRecord::Migration[5.2]
       t.integer :additional_info, array: true, default: []
       t.text :other_info
       t.integer :dealer_id
-
       t.integer :internal_number
-      t.string :serial_number
-      t.string :manufacturer
       t.string :remark
       t.integer :price
       t.text :description

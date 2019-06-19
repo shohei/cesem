@@ -17,7 +17,7 @@ class EquipmentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create equipment" do
     assert_difference('Equipment.count') do
-      post equipments_url, params: { equipment: { acquired_at: @equipment.acquired_at, additional_info: @equipment.additional_info, country_of_origin: @equipment.country_of_origin, dealer_id: @equipment.dealer_id, inventory_number: @equipment.inventory_number, location: @equipment.location, manufacturer: @equipment.manufacturer, name_of_model: @equipment.name_of_model, model_number: @equipment.model_number, name: @equipment.name, other_info: @equipment.other_info, serial_number: @equipment.serial_number, user_id: @equipment.user_id, warranty_period: @equipment.warranty_period } }
+      post equipments_url, params: { equipment: { acquired_year: @equipment.acquired_year, additional_info: @equipment.additional_info, country_of_origin: @equipment.country_of_origin, dealer_id: @equipment.dealer_id, inventory_number: @equipment.inventory_number, location: @equipment.location, manufacturer: @equipment.manufacturer, name_of_model: @equipment.name_of_model, model_number: @equipment.model_number, name: @equipment.name, other_info: @equipment.other_info, serial_number: @equipment.serial_number, user_id: @equipment.user_id, warranty_period: @equipment.warranty_period } }
     end
 
     assert_redirected_to equipment_url(Equipment.last)
@@ -34,7 +34,7 @@ class EquipmentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update equipment" do
-    patch equipment_url(@equipment), params: { equipment: { acquired_at: @equipment.acquired_at, additional_info: @equipment.additional_info, country_of_origin: @equipment.country_of_origin, dealer_id: @equipment.dealer_id, inventory_number: @equipment.inventory_number, location: @equipment.location, manufacturer: @equipment.manufacturer, name_of_model: @equipment.name_of_model, model_number: @equipment.model_number, name: @equipment.name, other_info: @equipment.other_info, serial_number: @equipment.serial_number, user_id: @equipment.user_id, warranty_period: @equipment.warranty_period } }
+    patch equipment_url(@equipment), params: { equipment: { acquired_year: @equipment.acquired_year, additional_info: @equipment.additional_info, country_of_origin: @equipment.country_of_origin, dealer_id: @equipment.dealer_id, inventory_number: @equipment.inventory_number, location: @equipment.location, manufacturer: @equipment.manufacturer, name_of_model: @equipment.name_of_model, model_number: @equipment.model_number, name: @equipment.name, other_info: @equipment.other_info, serial_number: @equipment.serial_number, user_id: @equipment.user_id, warranty_period: @equipment.warranty_period } }
     assert_redirected_to equipment_url(@equipment)
   end
 

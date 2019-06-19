@@ -6,9 +6,9 @@
 refreshTableColor = ->
   $.each $(".equipment_status"), (index,elem) ->
     switch $(elem).val()
-        when '0' then $(elem).parent().parent().attr('style',  'background-color:white')
-        when '1' then $(elem).parent().parent().attr('style',  'background-color:hsl(48, 100%, 67%)')
-        when '2' then $(elem).parent().parent().attr('style',  'background-color:hsl(348, 100%, 61%)')
+        when 'working' then $(elem).parent().parent().attr('style',  'background-color:white')
+        when 'repairable' then $(elem).parent().parent().attr('style',  'background-color:hsl(48, 100%, 67%)')
+        when 'abandoned' then $(elem).parent().parent().attr('style',  'background-color:hsl(348, 100%, 61%)')
 
 $ -> 
   $(".clear-button").click ->
@@ -17,9 +17,9 @@ $ ->
 
   $.each $(".equipment_status"), (index,elem) ->
     switch $(elem).val()
-        when '0' then $(elem).parent().parent().attr('style',  'background-color:white')
-        when '1' then $(elem).parent().parent().attr('style',  'background-color:hsl(48, 100%, 67%)')
-        when '2' then $(elem).parent().parent().attr('style',  'background-color:hsl(348, 100%, 61%)')
+        when 'working' then $(elem).parent().parent().attr('style',  'background-color:white')
+        when 'repairable' then $(elem).parent().parent().attr('style',  'background-color:hsl(48, 100%, 67%)')
+        when 'abandoned' then $(elem).parent().parent().attr('style',  'background-color:hsl(348, 100%, 61%)')
 
   $('.update-button').click ->
     refreshTableColor()

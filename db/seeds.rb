@@ -25,7 +25,11 @@ csv.tqdm.each do |row|
           t.name_of_model = row['name_of_model']
           t.model_number = row['model_number']
           t.serial_number = row['serial_number']
-          t.country_of_origin = row['country_of_origin']
+          if(row['country_of_origin']=='UK')
+            t.country_of_origin = 'GB'
+          else
+            t.country_of_origin = row['country_of_origin']
+          end
           t.manufacturer = row['manufacturer']
           t.where_purchased = row['where_purchased']
           t.price = row['price']
@@ -45,7 +49,11 @@ csv.tqdm.each do |row|
         t.name_of_model = row['name_of_model']
         t.model_number = row['model_number']
         t.serial_number = row['serial_number']
-        t.country_of_origin = row['country_of_origin']
+        if(row['country_of_origin']=='UK')
+          t.country_of_origin = 'GB'
+        else
+          t.country_of_origin = row['country_of_origin']
+        end
         t.manufacturer = row['manufacturer']
         t.where_purchased = row['where_purchased']
         t.price = row['price']

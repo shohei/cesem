@@ -6,12 +6,32 @@
     <td><%= @equipment.name %></td>
    </tr> 
    <tr>
+    <tr>
+      <th>Department</th>
+      <td><%= Department.find_by_id(@equipment.department_id).name %></td>
+    </tr>
       <th>Status</th>
       <td><%= @equipment.status %></td>
     </tr>
    <tr>
       <th>Model name</th>
       <td><%= @equipment.name_of_model %></td>
+    </tr>
+    <tr>
+      <th>Location</th>
+      <td><%= @equipment.location %></td>
+    </tr>
+    <tr>
+      <th>Manufacturer</th> 
+      <td><%= @equipment.manufacturer %></td>
+    </tr>
+    <tr>
+      <th>Country of origin</th> 
+      <% if not @equipment.country_of_origin.nil? %>
+         <td><%= ISO3166::Country[@equipment.country_of_origin].unofficial_names.first  %></td>
+      <% else %>
+         <td></td>
+      <% end %>
     </tr>
     <tr>
       <th>Model number</th> 
@@ -30,18 +50,6 @@
       <td><%= @equipment.acquired_year %></td>
     </tr>
     <tr>
-      <th>Location</th>
-      <td><%= @equipment.location %></td>
-    </tr>
-    <tr>
-      <th>Manufacturer</th> 
-      <td><%= @equipment.manufacturer %></td>
-    </tr>
-    <tr>
-      <th>Country of origin</th> 
-      <td><%= @equipment.country_of_origin %></td>
-    </tr>
-    <tr>
       <th>Warranty period</th>
       <td><%= @equipment.warranty_period %></td>
     </tr>
@@ -54,17 +62,27 @@
       <td><%= @equipment.other_info %></td>
     </tr>
     <tr>
-      <th>Dealer</th>
-        <td>
-          <% if not @equipment.dealer_id.nil? %>
-            <%= Dealer.find_by_id(@equipment.dealer_id).name %>
-          <% end %>
-        </td>
+      <th>Remark</th>
+      <td><%= @equipment.remark %></td>
     </tr>
-  </tr>
-  <tr>
-  </tr>
-</table> 
+    <tr>
+      <th>Where purchased</th>
+      <td><%= @equipment.where_purchased %></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td><%= @equipment.description %></td>
+    </tr>
+    <tr>
+      <th>Price US$</th>
+      <td><%= number_with_delimiter(@equipment.price, :delimiter => ',') %></td>
+    </tr>
+    <tr>
+      <th>Internal number</th>
+      <td><%= @equipment.internal_number %></td>
+    </tr>
+  </table> 
 
-<td><%= link_to 'Edit', edit_equipment_path(@equipment) , class: 'button'%></td> 
-<td><%= link_to 'Back', equipments_path , class: 'button' %></td>
+<% if current_user.role=="admin" %>
+  <td><%= link_to 'Edit', edit_equipment_path(@equipment) , class: 'button is-success'%></td> 
+<% end %>

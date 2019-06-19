@@ -12,10 +12,7 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :user_id , class: 'label'%>
-    <%= form.number_field :user_id , class: 'input'%>
-  </div>
+  <%= form.text_field :user_id, value: current_user.id, style: 'display:none' %>
 
   <div class="field">
     <%= form.label :name , class: 'label' %>
@@ -39,12 +36,12 @@
 
   <div class="field">
     <%= form.label :inventory_number , class: 'label' %>
-    <%= form.text_field :inventory_number , class: 'input' %>
+    <%= form.text_field :inventory_number , class: 'input', placeholder: 'JKU/'%>
   </div>
 
   <div class="field">
     <%= form.label 'Year acquired', class: 'label' %>
-    <%= form.select :acquired_at , 1981 .. Date.today.year ,include_blank: true %>
+    <%= form.select :acquired_year , 1981 .. Date.today.year ,include_blank: true %>
   </div>
 
   <div class="field">
@@ -77,7 +74,12 @@
 
   <div class="field">
     <%= form.label 'other_information' , class: 'label' %>
-    <%= form.number_field :other_info, class: 'input' %>
+    <%= form.text_field :other_info, class: 'input' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :department_id, class: 'label' %>
+    <%= form.collection_select :department_id, Department.all, :id, :name %>
   </div>
 
   <div class="field">

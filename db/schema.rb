@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2019_06_13_104435) do
     t.integer "user_id"
     t.string "name"
     t.string "name_of_model"
-    t.text "model_number"
+    t.string "model_number"
     t.string "serial_number"
     t.string "inventory_number"
     t.integer "acquired_year"
