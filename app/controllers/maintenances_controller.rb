@@ -17,6 +17,7 @@ class MaintenancesController < ApplicationController
   # GET /maintenances/new
   def new
     @maintenance = Maintenance.new
+    @equipment = Equipment.find_by_id(params[:equipment_id])
   end
 
   # GET /maintenances/1/edit
@@ -30,7 +31,7 @@ class MaintenancesController < ApplicationController
 
     respond_to do |format|
       if @maintenance.save
-        format.html { redirect_to @maintenance, notice: 'Maintenance was successfully created.' }
+        format.html { redirect_to :acknowledgement }
         format.json { render :show, status: :created, location: @maintenance }
       else
         format.html { render :new }

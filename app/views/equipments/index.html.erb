@@ -69,12 +69,14 @@
         <td><%= equipment.location %></td>
         <td><%= equipment.manufacturer %></td>
         <%= form_with(model: equipment, remote: true) do |form| %>
-          <td><%= form.select :status, Equipment.statuses.keys, {}, {class: 'equipment_status'} %></td>
-          <td><%= form.submit 'update' , class: 'button is-small update-button' %></td>
+          <td><%= form.select :status, Equipment.statuses.keys, {}, {class: 'equipment_status'} %>
+          <%= form.submit 'update' , class: 'button is-small update-button' %></td>
         <% end %>
         <% if current_user.role=="admin" %>
            <td><%= link_to 'Edit', edit_equipment_path(equipment), class: 'button is-small is-success' %></td>
            <td><%= link_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' } , class: 'button is-danger is-small' %></td>
+        <% else %>
+           <td><%= link_to 'Request maintenance', new_maintenance_path(:equipment_id => equipment.id), class: 'button is-success' %></td>
         <% end %>
       </tr>
       <% end %>

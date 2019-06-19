@@ -2,6 +2,6 @@ class Maintenance < ApplicationRecord
     belongs_to :user
     belongs_to :equipment
 
-    enum status: [:fault_identified, :repair_or_maintenance_scheduled, :spare_parts_purchased_and_delivered]
+    enum status: {todo: 0, fault_identified: 1, repair_or_maintenance_scheduled: 2, spare_parts_purchased_and_delivered: 3, pend: 4, completed: 5}
 
 end

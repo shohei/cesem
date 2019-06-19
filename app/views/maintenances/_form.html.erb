@@ -12,13 +12,25 @@
   <% end %>
 
   <div class="field">
-    <%= form.label 'Date of request', class: 'label' %>
-    <%= form.text_field '' , value: Time.now.strftime("%d/%m/%Y"), class: 'input' , disabled: true %>
+    <label class='label'>Date of request</label>
+    <p class="input"><%= Time.now.strftime("%d/%m/%Y") %></p>
   </div>
 
   <div class="field">
-    <%= form.label :equipment_id, class: 'label' %>
-    <%= form.collection_select :equipment_id, Equipment.order(:name),:id,:name, include_blank: true %>
+    <label class='label'>Equipment name</label>
+    <% if not @equipment.nil? %>
+      <p class="input"><%= @equipment.name %></p>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :user_id , value: @current_user.id, class: 'input' %>
+  </div>
+
+  <div class="field">
+    <% if not @equipment.nil? %>
+      <%= form.hidden_field :equipment_id , value: @equipment.id, class: 'input' %>
+    <% end %>
   </div>
 
   <div class="field">

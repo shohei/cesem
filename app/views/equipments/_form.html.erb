@@ -20,6 +20,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :department_id, class: 'label' %>
+    <%= form.collection_select :department_id, Department.all, :id, :name, include_blank: true %>
+  </div>
+  
+  <div class="field">
     <%= form.label 'Model name', class: 'label' %>
     <%= form.text_field :name_of_model , class: 'input', value: '' %>
   </div>
@@ -77,15 +82,6 @@
     <%= form.text_field :other_info, class: 'input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :department_id, class: 'label' %>
-    <%= form.collection_select :department_id, Department.all, :id, :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :dealer_id , class: 'label' %>
-    <%= form.collection_select :dealer_id, Dealer.order(:name),:id,:name, include_blank: true %>
-  </div>
 
   <div class="actions">
     <%= form.submit 'submit' , class: 'button is-success' %>
