@@ -12,15 +12,17 @@
 
      <p class="is-size-5 has-text-centered has-text-white" style="background-color: hsl(204, 86%, 53%);">Kindly select one option</p>
 
-     <div class="has-text-danger is-size-5"><a href="/equipments">Equipment list</a></div>
-     <div class="has-text-danger is-size-5"><a href="/equipments/new">Add new equipment</a></div>
+     <div class="has-text-danger is-size-5"><%= link_to 'Equipment list', equipments_path %></div>
+     <div class="has-text-danger is-size-5"><%= link_to 'Add new equipment', new_equipment_path %></div>
      <div class="has-text-danger is-size-5"><a href="/followup">Request follow-up</a></div>
-     <div class="has-text-danger is-size-5"><a href="/billings">Billing</a></div>
+     <div class="has-text-danger is-size-5"><%= link_to 'Billing', billings_path %></div>
      <div class="has-text-danger is-size-5"><a href="/survey">Customer Satisfaction Survey</a></div>
 
-     <p class="is-size-5 has-text-centered has-text-white" style="background-color: hsl(14, 100%, 53%);">Admin section</p>
-     <div class="has-text-danger is-size-5"><a href="/">Update maintenance status</a></div>
-     <div class="has-text-danger is-size-5"><a href="/billings/new">Create Billing</a></div>
+     <% if current_user.role=='admin' %>
+       <p class="is-size-5 has-text-centered has-text-white" style="background-color: hsl(14, 100%, 53%);">Admin section</p>
+       <div class="has-text-danger is-size-5"><a href="/dashboard">Update maintenance status</a></div>
+       <div class="has-text-danger is-size-5"><a href="/billings/new">Create Billing</a></div>
+     <% end %>
    </div>
  </div>
 

@@ -18,4 +18,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def authenticate_admin_user!
+    if user_signed_in? && current_user.role=='admin'
+      
+    else
+      redirect_to '/'
+    end
+  end
+
 end
