@@ -76,7 +76,15 @@ class MaintenancesController < ApplicationController
   def followup
     @maintenances = Maintenance.all
     @q = Maintenance.ransack(params[:q]) 
-    @search_maintenances = @q.result(distinct: true).order(:created_at).page(params[:page])
+    if not params[:q].blank? 
+      if not params[:q]['trace_number_cont'].blank?
+        @search_maintenances = @q.result(distinct: true).order(:created_at).page(params[:page])
+      else 
+        @search_maintenances = nil
+      end
+    else
+      @search_maintenances = nil
+    end
   end
 
   private

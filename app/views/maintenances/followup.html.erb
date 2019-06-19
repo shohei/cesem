@@ -1,6 +1,6 @@
 <h1 class="is-size-4" style="margin:40px 0;">Request follow-up (using trace number)</h1>
        
-    <%= search_form_for @q do |f| %>
+    <%= search_form_for @q, url: 'followup' do |f| %>
     <div class="field is-horizontal">
       <nav class="panel">
         <div class="panel-block">
@@ -22,7 +22,7 @@
       <div class="field">
         <div class="control">
           <%= f.submit ("Search") , class: 'button is-primary'%>
-          <button class="button clear-button">
+          <button class="button clear-trace_number-button">
             Clear
           </button>
         </div>
@@ -33,7 +33,7 @@
  </div>
 <% end %>
 
- <table class="table">
+ <table class="table is-striped">
     <thead>
       <tr>
         <th>Trace number</th>
@@ -45,14 +45,18 @@
     </thead>
 
     <tbody>
-      <% @search_maintenances.each do |maintenance| %>
-      <tr>
-        <td><%= link_to maintenance.trace_number , maintenance %></td>
-        <td><%= User.find_by_id(maintenance.user_id).name %></td>
-        <td><%= Equipment.find_by_id(maintenance.equipment_id).name %></td>
-        <td><%= maintenance.created_at.strftime("%d/%m/%Y") %></td>
-        <td><%= Department.find_by_id(Equipment.find_by_id(maintenance.equipment_id).department_id).name %></td>
-      </tr>
+      <% if not @search_maintenances.nil? %>
+        <% @search_maintenances.each do |maintenance| %>
+        <tr>
+          <td><%= link_to maintenance.trace_number , maintenance %></td>
+          <td><%= User.find_by_id(maintenance.user_id).name %></td>
+          <td><%= Equipment.find_by_id(maintenance.equipment_id).name %></td>
+          <td><%= maintenance.created_at.strftime("%d/%m/%Y") %></td>
+          <td><%= Department.find_by_id(Equipment.find_by_id(maintenance.equipment_id).department_id).name %></td>
+        </tr>
+        <% end %>
+      <% else %>
+        <tr></tr>
       <% end %>
     </tbody>
   </table>
