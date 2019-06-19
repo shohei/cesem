@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 2019_06_13_104435) do
     t.integer "status", default: 0
     t.date "scheduled_at"
     t.date "completion_expected_at"
-    t.date "recomission_projected_at"
+    t.date "recommission_projected_at"
     t.date "completed_at"
     t.text "other_status"
     t.datetime "created_at", null: false

@@ -10,7 +10,7 @@
 #   status: 1
 #   scheduled_at: 2019-06-10
 #   completion_expected_at: 2019-06-10
-#   recomission_projected_at: 2019-06-10
+#   recommission_projected_at: 2019-06-10
 #   other_status: MyText
 
 # two:
@@ -23,5 +23,5 @@
 #   status: 1
 #   scheduled_at: 2019-06-10
 #   completion_expected_at: 2019-06-10
-#   recomission_projected_at: 2019-06-10
+#   recommission_projected_at: 2019-06-10
 #   other_status: MyText

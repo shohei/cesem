@@ -1,29 +1,59 @@
-    <h1 class="is-size-4" style="margin:40px 0;">Request follow-up (enter Trace Number)</h1>
+<h1 class="is-size-4" style="margin:40px 0;">Request follow-up (using trace number)</h1>
        
-    <div class="field">
-        <label class="label">Trace Number</label>
-        <div class="control">
-            <input class="input" type="text" placeholder="">
+    <%= search_form_for @q do |f| %>
+    <div class="field is-horizontal">
+      <nav class="panel">
+        <div class="panel-block">
+
+          <div class="field-label">
+            <%= f.label :trace_number_cont, "Trace Number", class: 'label' %> 
+        </div>
+        <div class="field-body">
+            <div class="field">
+              <p class="control is-expanded">
+                <%= f.search_field :trace_number_cont, placeholder: 'CeSEM/MM/____/YYYY' , class: 'input trace_number-input' %>
+            </p>
         </div>
     </div>
 
-    <div class="field">
-        <label class="label">Enquiry Output (Expert diagnosis)</label>
+    <div class="field-label">
+    </div>
+    <div class="field-body">
+      <div class="field">
         <div class="control">
-            <input class="textarea" type="text" placeholder="">
+          <%= f.submit ("Search") , class: 'button is-primary'%>
+          <button class="button clear-button">
+            Clear
+          </button>
         </div>
+      </div>
+     </div>
     </div>
+  </nav>
+ </div>
+<% end %>
 
-   <div class="field">
-    <label class="label">Status of Repair / Maintenance</label>
-  </div>
+ <table class="table">
+    <thead>
+      <tr>
+        <th>Trace number</th>
+        <th>Requester</th>
+        <th>Equipment Name</th>
+        <th>Requested date</th>
+        <th>Department</th>
+      </tr>
+    </thead>
 
-
-    <div class="field is-grouped" style="margin: 60px 0px;">
-        <p class="control">
-         <a class="button is-success">
-            Submit
-        </a>
-        </p>
-    </div>
+    <tbody>
+      <% @search_maintenances.each do |maintenance| %>
+      <tr>
+        <td><%= link_to maintenance.trace_number , maintenance %></td>
+        <td><%= User.find_by_id(maintenance.user_id).name %></td>
+        <td><%= Equipment.find_by_id(maintenance.equipment_id).name %></td>
+        <td><%= maintenance.created_at.strftime("%d/%m/%Y") %></td>
+        <td><%= Department.find_by_id(Equipment.find_by_id(maintenance.equipment_id).department_id).name %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 

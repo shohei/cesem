@@ -10,7 +10,7 @@ class CreateMaintenances < ActiveRecord::Migration[5.2]
       t.integer :status, default: 0 
       t.date :scheduled_at
       t.date :completion_expected_at
-      t.date :recomission_projected_at
+      t.date :recommission_projected_at
       t.date :completed_at
       t.text :other_status
 

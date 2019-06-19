@@ -20,7 +20,7 @@ class MaintenancesTest < ApplicationSystemTestCase
     fill_in "Equipment", with: @maintenance.equipment_id
     fill_in "Other status", with: @maintenance.other_status
     fill_in "Precaution", with: @maintenance.precaution
-    fill_in "Recomission projected at", with: @maintenance.recomission_projected_at
+    fill_in "recommission projected at", with: @maintenance.recommission_projected_at
     fill_in "Scheduled at", with: @maintenance.scheduled_at
     fill_in "Status", with: @maintenance.status
     fill_in "Trace number", with: @maintenance.trace_number
@@ -41,7 +41,7 @@ class MaintenancesTest < ApplicationSystemTestCase
     fill_in "Equipment", with: @maintenance.equipment_id
     fill_in "Other status", with: @maintenance.other_status
     fill_in "Precaution", with: @maintenance.precaution
-    fill_in "Recomission projected at", with: @maintenance.recomission_projected_at
+    fill_in "recommission projected at", with: @maintenance.recommission_projected_at
     fill_in "Scheduled at", with: @maintenance.scheduled_at
     fill_in "Status", with: @maintenance.status
     fill_in "Trace number", with: @maintenance.trace_number

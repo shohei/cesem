@@ -1,4 +1,4 @@
-require 'test_helper'
+equire 'test_helper'
 
 class MaintenancesControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -17,7 +17,7 @@ class MaintenancesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create maintenance" do
     assert_difference('Maintenance.count') do
-      post maintenances_url, params: { maintenance: { completion_expected_at: @maintenance.completion_expected_at, description: @maintenance.description, diagnosis: @maintenance.diagnosis, equipment_id: @maintenance.equipment_id, other_status: @maintenance.other_status, precaution: @maintenance.precaution, recomission_projected_at: @maintenance.recomission_projected_at, scheduled_at: @maintenance.scheduled_at, status: @maintenance.status, trace_number: @maintenance.trace_number, user_id: @maintenance.user_id } }
+      post maintenances_url, params: { maintenance: { completion_expected_at: @maintenance.completion_expected_at, description: @maintenance.description, diagnosis: @maintenance.diagnosis, equipment_id: @maintenance.equipment_id, other_status: @maintenance.other_status, precaution: @maintenance.precaution, recommission_projected_at: @maintenance.recommission_projected_at, scheduled_at: @maintenance.scheduled_at, status: @maintenance.status, trace_number: @maintenance.trace_number, user_id: @maintenance.user_id } }
     end
 
     assert_redirected_to maintenance_url(Maintenance.last)
@@ -34,7 +34,7 @@ class MaintenancesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update maintenance" do
-    patch maintenance_url(@maintenance), params: { maintenance: { completion_expected_at: @maintenance.completion_expected_at, description: @maintenance.description, diagnosis: @maintenance.diagnosis, equipment_id: @maintenance.equipment_id, other_status: @maintenance.other_status, precaution: @maintenance.precaution, recomission_projected_at: @maintenance.recomission_projected_at, scheduled_at: @maintenance.scheduled_at, status: @maintenance.status, trace_number: @maintenance.trace_number, user_id: @maintenance.user_id } }
+    patch maintenance_url(@maintenance), params: { maintenance: { completion_expected_at: @maintenance.completion_expected_at, description: @maintenance.description, diagnosis: @maintenance.diagnosis, equipment_id: @maintenance.equipment_id, other_status: @maintenance.other_status, precaution: @maintenance.precaution, recommission_projected_at: @maintenance.recommission_projected_at, scheduled_at: @maintenance.scheduled_at, status: @maintenance.status, trace_number: @maintenance.trace_number, user_id: @maintenance.user_id } }
     assert_redirected_to maintenance_url(@maintenance)
   end
 

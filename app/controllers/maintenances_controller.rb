@@ -75,6 +75,8 @@ class MaintenancesController < ApplicationController
 
   def followup
     @maintenances = Maintenance.all
+    @q = Maintenance.ransack(params[:q]) 
+    @search_maintenances = @q.result(distinct: true).order(:created_at).page(params[:page])
   end
 
   private
@@ -93,6 +95,6 @@ class MaintenancesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def maintenance_params
-      params.require(:maintenance).permit(:user_id, :equipment_id, :description, :precaution, :trace_number, :diagnosis, :status, :scheduled_at, :completion_expected_at, :recomission_projected_at, :other_status)
+      params.require(:maintenance).permit(:user_id, :equipment_id, :description, :precaution, :trace_number, :diagnosis, :status, :scheduled_at, :completion_expected_at, :recommission_projected_at, :other_status)
     end
 end
