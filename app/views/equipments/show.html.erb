@@ -28,7 +28,11 @@
     <tr>
       <th>Country of origin</th> 
       <% if not @equipment.country_of_origin.nil? %>
+        <% if not ISO3166::Country[@equipment.country_of_origin].nil? %>
          <td><%= ISO3166::Country[@equipment.country_of_origin].unofficial_names.first  %></td>
+         <% else %>
+           <td></td>
+        <% end %>
       <% else %>
          <td></td>
       <% end %>

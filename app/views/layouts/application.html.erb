@@ -1,35 +1,66 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CeSEM - JKUAT</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>CeSEM - JKUAT</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-    <body>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-      <div class="container" style="margin-top: 60px; margin-bottom: 40px;">
-      <% if user_signed_in? %>
-         <div class="columns">
-          <%= image_tag ("jkuat_logo.jpg") , {style: "height: 80px;" , class: "is-pulled-left"} %>
-          <div class="column">
-            <a class="is-size-4 has-text-danger" href="/">CeSEM</a>
-          </div>
-          <div class="column">
-             <div class="is-pulled-right">
-               <h2> <%= current_user.name %> is logged in.</h2> 
-               <h4> email: <%= current_user.email %> </h4>
-               <%= link_to "Sign Out", destroy_user_session_path, method: :delete , class: 'button is-danger is-pulled-right' %> 
-             </div>
-          </div>
-         </div>
-     <% end %>
-  
-        <%= yield %>
-  
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <%= image_tag ("jkuat_logo.jpg") %>
+        <span class="is-size-5 has-text-danger" href="/">CeSEM</a>
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
       </div>
 
-    </body>
-</html>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="/">
+            Home
+          </a>
+
+          <a class="navbar-item" href="/about">
+            About Us
+          </a>
+
+        </div>
+
+        <div class="navbar-end">
+          <% if user_signed_in? %>
+          <div class="navbar-item">
+            Login User: <b><%= current_user.name %> (<%= current_user.email %>)</b>
+          </div>
+
+          <div class="navbar-item">
+            <div class="buttons">
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'button is-danger' %>
+            </div>
+          </div>
+        </div>
+        <% else %>
+          <div class="navbar-item">
+            <div class="buttons">
+              <%= render "devise/shared/links" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </nav>
+
+    <div class="container" style="margin-top: 60px; margin-bottom: 40px;">
+      <%= yield %>
+    </div>
+
+  </body>
+  </html>

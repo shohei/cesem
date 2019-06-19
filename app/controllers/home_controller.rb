@@ -1,11 +1,16 @@
 class HomeController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :about
 
   def index
     
   end
 
   def home
+
+  end
+
+
+  def about
 
   end
 

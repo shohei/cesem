@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'survey', to: 'home#survey'
   get 'search', to: 'equipments#search'
   get 'download_pdf', to: "home#download_pdf"
+  get 'about', to: "home#about"
   # devise_scope :user do
   #   root to: "devise/sessions#new"
   # end
