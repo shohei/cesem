@@ -11,7 +11,8 @@ class HomeController < ApplicationController
   end
 
   def dashboard
-
+    @q = Maintenance.ransack(params[:q]) 
+    @search_maintenances = @q.result(distinct: true).page(params[:page]) 
   end
 
   def staff
