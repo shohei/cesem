@@ -1,11 +1,16 @@
 class EquipmentsController < ApplicationController
   before_action :set_equipment, only: [:show, :edit, :update, :destroy]
+  before_action :set_search
+
+  def set_search
+    @q = Equipment.ransack(params[:q]) 
+    @search_equipments = @q.result(distinct: true).page(params[:page])
+  end 
 
   # GET /equipments
   # GET /equipments.json
   def index
-    @q = Equipment.ransack(params[:q]) 
-    @search_equipments = @q.result(distinct: true).page(params[:page])
+    @equipments = Equipment.all
   end
 
   # GET /equipments/1
@@ -43,7 +48,8 @@ class EquipmentsController < ApplicationController
   def update
     respond_to do |format|
       if @equipment.update(equipment_params)
-        format.html { redirect_to @equipment, notice: 'Equipment was successfully updated.' }
+        # format.html { redirect_to @equipment, notice: 'Equipment was successfully updated.' }
+        format.html { render :index }
         format.json { render :show, status: :ok, location: @equipment }
       else
         format.html { render :edit }

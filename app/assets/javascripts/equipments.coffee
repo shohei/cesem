@@ -3,8 +3,25 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 
+refreshTableColor = ->
+  $.each $(".equipment_status"), (index,elem) ->
+    switch $(elem).val()
+        when '0' then $(elem).parent().parent().attr('style',  'background-color:white')
+        when '1' then $(elem).parent().parent().attr('style',  'background-color:hsl(48, 100%, 67%)')
+        when '2' then $(elem).parent().parent().attr('style',  'background-color:hsl(348, 100%, 61%)')
+
 $ -> 
   $(".clear-button").click ->
     $(".name-input").val("")
     $(".model-name-input").val("")
-  
+
+  $.each $(".equipment_status"), (index,elem) ->
+    switch $(elem).val()
+        when '0' then $(elem).parent().parent().attr('style',  'background-color:white')
+        when '1' then $(elem).parent().parent().attr('style',  'background-color:hsl(48, 100%, 67%)')
+        when '2' then $(elem).parent().parent().attr('style',  'background-color:hsl(348, 100%, 61%)')
+
+  $('.update-button').click ->
+    refreshTableColor()
+
+

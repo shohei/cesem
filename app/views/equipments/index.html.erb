@@ -45,7 +45,7 @@
 
 <div class="table-wrapper-scroll-y my-custom-scrollbar" style="margin-top: 20px;">
 
-  <table class="table is-striped">
+  <table class="table">
     <thead>
       <tr>
         <th>Name</th>
@@ -55,6 +55,7 @@
         <th>Serial number</th>
         <th>Location</th>
         <th>Manufacturer</th>
+        <th>Status</th>
         <th colspan="2"></th>
       </tr>
     </thead>
@@ -69,9 +70,13 @@
         <td><%= equipment.serial_number %></td>
         <td><%= equipment.location %></td>
         <td><%= equipment.manufacturer %></td>
-        <td><%= link_to 'Edit', edit_equipment_path(equipment), class: 'button is-small' %></td>
+        <%= form_with(model: equipment, remote: true) do |form| %>
+          <td><%= form.select :status, Equipment.statuses.to_a , {}, {class: 'equipment_status'} %></td>
+          <td><%= form.submit 'update' , class: 'button is-small update-button' %></td>
+        <% end %>
         <% if current_user.role=="admin" %>
-        <td><%= link_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' } , class: 'button is-danger is-small' %></td>
+           <td><%= link_to 'Edit', edit_equipment_path(equipment), class: 'button is-small' %></td>
+           <td><%= link_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' } , class: 'button is-danger is-small' %></td>
         <% end %>
       </tr>
       <% end %>
