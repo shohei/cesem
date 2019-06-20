@@ -43,16 +43,22 @@
 
 <p>
   <strong>Scheduled at:</strong>
-  <%= @maintenance.scheduled_at %>
+  <% if not @maintenance.scheduled_at.nil? %>
+    <%= @maintenance.scheduled_at.strftime("%d/%m/%Y") %>
+  <% end %>
 </p>
 
 <p>
   <strong>Completion expected at:</strong>
-  <%= @maintenance.completion_expected_at %>
+  <% if not @maintenance.completion_expected_at.nil? %>
+    <%= @maintenance.completion_expected_at.strftime("%d/%m/%Y") %>
+  <% end %>
 </p>
 
 <p>
   <strong>recommission projected at:</strong>
-  <%= @maintenance.recommission_projected_at %>
+  <% if not @maintenance.recommission_projected_at.nil? %>
+    <%= @maintenance.recommission_projected_at.strftime("%d/%m/%Y") %>
+  <% end %>
 </p>
 
