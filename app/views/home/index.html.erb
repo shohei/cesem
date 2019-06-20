@@ -1,8 +1,8 @@
 <div class="columns is-centered">
   <div class="column is-one-fifth">
     <h3 class="is-size-5">Summary this month</h3>
-    <p>Total repair: 5</p>
-    <p>Pending repair: 10</p>
+    <p>Total request: <%= Maintenance.where(created_at: Date.today.beginning_of_month..Date.today.end_of_month).count %></p>
+    <p>Maintenance completed: <%= Maintenance.where(completed_at: Date.today.beginning_of_month..Date.today.end_of_month).count %></p>
   </div>
 
   <div class="column">

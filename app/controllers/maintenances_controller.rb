@@ -48,7 +48,13 @@ class MaintenancesController < ApplicationController
   # PATCH/PUT /maintenances/1.json
   def update
     respond_to do |format|
-      if @maintenance.update(maintenance_params)
+      _maintenance_params = maintenance_params
+      last_status = @maintenance.status
+      current_status = maintenance_params[:status]
+      if(last_status!=current_status) && current_status=='completed'
+        _maintenance_params[:completed_at] = Date.today
+      end
+      if @maintenance.update(_maintenance_params)
         format.html { redirect_to @maintenance, notice: 'Maintenance was successfully updated.' }
         format.json { render :show, status: :ok, location: @maintenance }
       else
@@ -103,6 +109,6 @@ class MaintenancesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def maintenance_params
-      params.require(:maintenance).permit(:user_id, :equipment_id, :description, :precaution, :trace_number, :diagnosis, :status, :scheduled_at, :completion_expected_at, :recommission_projected_at, :other_status)
+      params.require(:maintenance).permit(:user_id, :equipment_id, :description, :precaution, :trace_number, :diagnosis, :status, :scheduled_at, :completion_expected_at, :recommission_projected_at, :other_status, :completed_at)
     end
 end

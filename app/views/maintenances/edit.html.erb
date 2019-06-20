@@ -1,4 +1,4 @@
-<h1 class="is-size-4" style="margin-bottom: 20px;">Update Maintenance Status</h1>
+<h1 class="is-size-4" style="margin-bottom: 20px;">Requested maintenance information</h1>
 
 <table class="table is-striped">
   <thead>
@@ -31,6 +31,8 @@
     <p><%= @maintenance.precaution %></p>
   </div>
 
+<h1 class="is-size-4" style="margin-bottom: 20px;">Update maintenance status</h1>
+
 <%= form_with(model: @maintenance, local: true) do |form| %>
   <% if @maintenance.errors.any? %>
     <div id="error_explanation">
@@ -44,17 +46,25 @@
     </div>
   <% end %>
 
-      <th>Scheduled</th>
-      <th>Completion expected</th>
-      <th>Recommission projected</th>
+  <div class="field">
+    <%= form.label "Expert's diagnosis", class: 'label' %>
+    <%= form.text_area :diagnosis, include_blank: true , class: 'textarea' %>
+  </div>
+  <div class="field">
+    <%= form.label 'Status', class: 'label' %>
+    <%= form.select :status , Maintenance.statuses.map{|arr| [arr[0].titleize,arr[0]]} , class: 'dropdown-content' %>
+  </div>
   <div class="field">
     <%= form.label 'Scheduled at', class: 'label' %>
-    <%= form.datetime_picker :scheduled_at, data:{ provide:'datepicker' } %>
+    <%= form.date_select :scheduled_at , start_year: Date.today.year, include_blank: true %>
   </div>
-
   <div class="field">
-    <%= form.label 'Any precautionary hazardous issues: (provide details below)', class: 'label' %>
-    <%= form.text_area :precaution , class: 'textarea' %>
+    <%= form.label 'Completion expected at', class: 'label' %>
+    <%= form.date_select :completion_expected_at, start_year: Date.today.year, include_blank: true %>
+  </div>
+  <div class="field">
+    <%= form.label 'Recommission projected at', class: 'label' %>
+    <%= form.date_select :recommission_projected_at, start_year: Date.today.year, include_blank: true %>
   </div>
 
   <div class="actions">
