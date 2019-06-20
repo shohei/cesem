@@ -1,14 +1,48 @@
-<h1 class="is-size-4">Dashboard</h1>
+<h1 class="is-size-4">Requested maintenances</h1>
+
+
+
 
 <table class="table is-striped">
-    
-
-
-
-
-
-
-
-
+  <thead>
+    <tr>
+      <th>Trace number</th>
+      <th>Requester</th>
+      <th>Equipment name</th>
+      <th>Department</th>
+      <th>Status</th>
+      <th>Scheduled</th>
+      <th>Completion expected</th>
+      <th>Recommission projected</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @search_maintenances.each do |maintenance| %>     
+    <tr>
+      <td><%= maintenance.trace_number   %></td>
+      <td><%= User.find_by_id(maintenance.user_id).name %></td>
+      <td><%= Equipment.find_by_id(maintenance.equipment_id).name %></td>
+      <td><%= Department.find_by_id(Equipment.find_by_id(maintenance.equipment_id).department_id).name %></td>
+      <td><%= maintenance.status %></td>
+      <% if not maintenance.scheduled_at.nil?  %>
+        <td><%= maintenance.scheduled_at.strftime("%d/%m/%Y") %></td>
+      <% else %>
+        <td></td>
+      <% end %>
+      <% if not maintenance.completion_expected_at.nil?  %>
+        <td><%= maintenance.completion_expected_at.strftime("%d/%m/%Y") %></td>
+      <% else %>
+        <td></td>
+      <% end %>
+      <% if not maintenance.recommission_projected_at.nil?  %>
+        <td><%= maintenance.recommission_projected_at.strftime("%d/%m/%Y") %></td>
+      <% else %>
+        <td></td>
+      <% end %>
+        <td><%= link_to 'Update status', edit_maintenance_path(maintenance),  class: 'button' %></td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>
 

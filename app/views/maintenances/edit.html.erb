@@ -1,6 +1,81 @@
-<h1>Editing Maintenance</h1>
+<h1 class="is-size-4" style="margin-bottom: 20px;">Update Maintenance Status</h1>
 
-<%= render 'form', maintenance: @maintenance %>
+<table class="table is-striped">
+  <thead>
+    <tr>
+      <th>Trace number</th>
+      <th>Date of request</th>
+      <th>Requester</th>
+      <th>Equipment name</th>
+      <th>Department</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @maintenance.trace_number %></td>
+      <td><%= @maintenance.created_at.strftime("%d/%m/%Y") %></td>
+      <td><%= User.find_by_id(@maintenance.user_id).name %></td>
+      <td><%= Equipment.find_by_id(@maintenance.equipment_id).name %></td>
+      <td><%= Department.find_by_id(Equipment.find_by_id(@maintenance.equipment_id).department_id).name %></td>
+    </tr>
+  </tbody>
+</table>
 
-<%= link_to 'Show', @maintenance %> |
-<%= link_to 'Back', maintenances_path %>
+  <div class="field">
+    <label class="label">Problem description</label>
+    <p><%= @maintenance.description %></p>  
+  </div>
+
+  <div class="field">
+    <label class="label">Any precautionary hazardous issues</label>
+    <p><%= @maintenance.precaution %></p>
+  </div>
+
+<%= form_with(model: @maintenance, local: true) do |form| %>
+  <% if @maintenance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@maintenance.errors.count, "error") %> prohibited this maintenance from being saved:</h2>
+
+      <ul>
+      <% maintenance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+      <th>Scheduled</th>
+      <th>Completion expected</th>
+      <th>Recommission projected</th>
+  <div class="field">
+    <%= form.label 'Scheduled at', class: 'label' %>
+    <%= form.datetime_picker :scheduled_at, data:{ provide:'datepicker' } %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Any precautionary hazardous issues: (provide details below)', class: 'label' %>
+    <%= form.text_area :precaution , class: 'textarea' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Submit', class: 'button is-success' %>
+  </div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
