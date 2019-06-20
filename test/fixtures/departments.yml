@@ -17,9 +17,9 @@ midwifery:
   abbreviation:
   school: nursing
   alias: midwifery
-
+t
 nursing_eductaion_leadership:
-  name: Department of Nursing Eductaion Leadership, Management and Reserach
+  name: Department of Nursing Education Leadership, Management and Research
   abbreviation:
   school: nursing 
   alias: nursing_eductaion_leadership
@@ -36,11 +36,11 @@ clinical_medicine:
   school: medicine
   alias: clinical_medicine
 
-clitical_care:
-  name: Department of Clitical Care and Anaesthesiology
+critical_care:
+  name: Department of Critical Care and Anaesthesiology
   abbreviation:
   school: medicine 
-  alias: clitical_care
+  alias: critical_care
 
 human_anatomy:
   name: Department of Human Anatomy
@@ -66,11 +66,11 @@ medical_physiology:
   school: medicine
   alias: medical_physiology
 
-obsterics:
-  name: Department of Obsterics and Gynaecology
+obstetrics:
+  name: Department of Obstetrics and Gynaecology
   abbreviation:
   school: medicine
-  alias: obsterics
+  alias: obstetrics
 
 psychiatry:
   name: Department of Psychiatry
@@ -169,7 +169,7 @@ statistics:
   alias: statistics
 
 pure_math:
-  name: Department of Pure and Appliec Mathematics
+  name: Department of Pure and Applied Mathematics
   abbreviation:
   school: math
   alias: pure_math
@@ -337,7 +337,7 @@ dare:
   alias: dare
 
 fst:
-  name: Department of Foos Sience and Technology
+  name: Department of Food Science and Technology
   abbreviation: FST
   school: sofnus
   alias: fst

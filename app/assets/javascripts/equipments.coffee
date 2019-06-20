@@ -14,6 +14,7 @@ $ ->
   $(".clear-button").click ->
     $(".name-input").val("")
     $(".model-name-input").val("")
+    $(".department-select").val('')
 
   $.each $(".equipment_status"), (index,elem) ->
     switch $(elem).val()

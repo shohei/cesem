@@ -25,8 +25,20 @@
         </div>
       </div>
 
-    <div class="field-label">
+      <div class="field-label" style="margin-left: 20px;">
+        <%= f.label :department_id_eq , "Department" , class: 'label' %> 
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <p class="control is-expanded">
+            <%= f.select :department_id_eq, Department.all.pluck(:name).zip(Department.all.pluck(:id)), {include_blank: true}, { class: 'department-select'} %>
+          </p>
+        </div>
+      </div>
+
     </div>
+
+    <div class="panel-block">
     <div class="field-body">
       <div class="field">
         <div class="control">
@@ -37,7 +49,8 @@
         </div>
       </div>
     </div>
-    </div>
+  </div>
+
   </nav>
 </div>
 <% end %>
@@ -69,21 +82,21 @@
         <td><%= equipment.location %></td>
         <td><%= equipment.manufacturer %></td>
         <%= form_with(model: equipment, remote: true) do |form| %>
-          <td><%= form.select :status, Equipment.statuses.keys, {}, {class: 'equipment_status'} %>
+        <td><%= form.select :status, Equipment.statuses.keys, {}, {class: 'equipment_status'} %>
           <%= form.submit 'update' , class: 'button is-small update-button' %></td>
+          <% end %>
+          <% if current_user.role=="admin" %>
+          <td><%= link_to 'Edit', edit_equipment_path(equipment), class: 'button is-small is-success' %></td>
+          <td><%= link_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' } , class: 'button is-danger is-small' %></td>
+          <% else %>
+          <td><%= link_to 'Request maintenance', new_maintenance_path(:equipment_id => equipment.id), class: 'button is-success' %></td>
+          <% end %>
+        </tr>
         <% end %>
-        <% if current_user.role=="admin" %>
-           <td><%= link_to 'Edit', edit_equipment_path(equipment), class: 'button is-small is-success' %></td>
-           <td><%= link_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' } , class: 'button is-danger is-small' %></td>
-        <% else %>
-           <td><%= link_to 'Request maintenance', new_maintenance_path(:equipment_id => equipment.id), class: 'button is-success' %></td>
-        <% end %>
-      </tr>
-      <% end %>
-    </tbody>
+      </tbody>
 
-  </table>
-</div>
+    </table>
+  </div>
 
-<%= paginate @search_equipments  %>
+  <%= paginate @search_equipments  %>
 
