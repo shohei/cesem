@@ -35,6 +35,9 @@ class MaintenancesController < ApplicationController
 
     respond_to do |format|
       if @maintenance.save
+        UserNotificationMailer.send_mail_new_maintenance_confirmed(@maintenance).deliver_later
+        AdminNotificationMailer.send_mail_new_maintenance_created(@maintenance).deliver_later
+
         format.html { redirect_to "/acknowledgement/?trace_number=#{trace_number}&inventory_number=#{inventory_number}" }
         format.json { render :show, status: :created, location: @maintenance }
       else
@@ -53,8 +56,11 @@ class MaintenancesController < ApplicationController
       current_status = maintenance_params[:status]
       if(last_status!=current_status) && current_status=='completed'
         _maintenance_params[:completed_at] = Date.today
+      else(last_status!=current_status) && last_status=='completed'
+        _maintenance_params[:completed_at] = nil
       end
       if @maintenance.update(_maintenance_params)
+        UserNotificationMailer.send_mail_maintenance_updated(@maintenance).deliver_later
         format.html { redirect_to @maintenance, notice: 'Maintenance was successfully updated.' }
         format.json { render :show, status: :ok, location: @maintenance }
       else

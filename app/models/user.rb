@@ -9,4 +9,6 @@ class User < ApplicationRecord
   validates :email, format: { with: /\b[A-Z0-9._%a-z\-]+@.*jkuat\.ac\.ke\z/,
                   message: "must be a jkuat.ac.ke account" }
                   
+  has_many :equipments
+  has_many :maintenances, dependent: :destroy                 
 end

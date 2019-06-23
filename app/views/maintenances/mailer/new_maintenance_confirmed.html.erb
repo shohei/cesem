@@ -1,0 +1,24 @@
+<h3>Thank you for requesting maintenance</h3>
+
+<p>The detail of your request is below:</p>
+
+<table>
+    <thead>
+     <tr>
+         <th>Trace Number</th>
+         <th>Date of request</th>
+         <th>Equipment name</th>
+         <th>Problem description</th>
+         <th>Precautionary hazardous issues</th>
+     </tr> 
+ </thead>
+ <tbody>
+    <tr>
+        <td><%= @maintenance.trace_number %></td>
+        <td><%= @maintenance.created_at.strftime("%d/%m/%Y") %></td>
+        <td><%= Equipment.find_by_id(@maintenance.equipment_id).name %></td>
+        <td><%= @maintenance.description %></td>
+        <td><%= @maintenance.precaution %></td>
+    </tr>
+</tbody>
+</table>
