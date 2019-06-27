@@ -88,9 +88,10 @@
       </tr>
     </thead>
 
-    <tbody>
+    <tbody> 
+
       <% @search_equipments.each do |equipment| %>
-      <tr>
+      <tr class="search-equipments-table">
         <td><%= link_to equipment.name , equipment %></td>
         <td><%= Department.find_by_id(equipment.department_id).name %></td>
         <td><%= equipment.acquired_year %></td>
@@ -108,7 +109,29 @@
           <td><%= link_to 'Request maintenance', new_maintenance_path(:equipment_id => equipment.id), class: 'button is-success' %></td>
           <% end %>
         </tr>
-        <% end %>
+      <% end %>
+
+      <% @search_archived_equipments.each do |_equipment| %>
+      <tr class="search-archived-equipments-table">
+        <td><%= link_to _equipment.name , _equipment %></td>
+        <td><%= Department.find_by_id(_equipment.department_id).name %></td>
+        <td><%= _equipment.acquired_year %></td>
+        <td><%= _equipment.model_number %></td>
+        <td><%= _equipment.location %></td>
+        <td><%= _equipment.manufacturer %></td>
+        <%= form_with(model: _equipment, remote: true) do |form| %>
+        <td><%= form.select :status, Equipment.statuses.keys, {}, {class: 'equipment_status'} %>
+          <%= form.submit 'update' , class: 'button is-small update-button' %></td>
+          <% end %>
+          <% if current_user.role=="admin" %>
+          <td><%= link_to 'Edit', edit_equipment_path(_equipment), class: 'button is-small is-success' %></td>
+          <td><%= link_to 'Unarchive', unarchive_equipment_path(_equipment),  class: 'button is-info is-small' %></td>
+          <% else %>
+          <td><%= link_to 'Request maintenance', new_maintenance_path(:equipment_id => _equipment.id), class: 'button is-success' %></td>
+          <% end %>
+       </tr>
+       <% end %>
+
       </tbody>
 
     </table>

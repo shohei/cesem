@@ -4,7 +4,8 @@ class EquipmentsController < ApplicationController
 
   def set_search
     @q = Equipment.ransack(params[:q]) 
-    @search_equipments = @q.result(distinct: true).page(params[:page])
+    @search_equipments = @q.result(distinct: true).where(archived: false).page(params[:page])
+    @search_archived_equipments = @q.result(distinct: true).where(archived: true).page(params[:page])
   end 
 
   # GET /equipments
@@ -71,7 +72,13 @@ class EquipmentsController < ApplicationController
   def archive
     @equipment = Equipment.find_by_id(params[:id])
     @equipment.update(archived: true)
-    render :index 
+    redirect_to :equipments
+  end
+
+  def unarchive
+    @equipment = Equipment.find_by_id(params[:id])
+    @equipment.update(archived: false)
+    redirect_to :equipments
   end
 
   private

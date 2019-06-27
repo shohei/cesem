@@ -10,7 +10,7 @@ refreshTableColor = ->
         when 'repairable' then $(elem).parent().parent().attr('style',  'background-color:hsl(48, 100%, 67%)')
         when 'abandoned' then $(elem).parent().parent().attr('style',  'background-color:hsl(348, 100%, 61%)')
 
-$ -> 
+$(document).on 'turbolinks:load', ->
   $(".clear-button").click ->
     $(".name-input").val("")
     $(".model-name-input").val("")
@@ -28,8 +28,12 @@ $ ->
   $('.unarchived-equipments').click ->
     $(this).addClass('is-active')
     $('.archived-equipments').removeClass('is-active')
+    $(".search-archived-equipments-table").hide()
+    $(".search-equipments-table").show()
 
   $('.archived-equipments').click ->
     $(this).addClass('is-active')
     $('.unarchived-equipments').removeClass('is-active')
+    $(".search-archived-equipments-table").show()
+    $(".search-equipments-table").hide()
 
