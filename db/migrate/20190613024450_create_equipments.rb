@@ -22,6 +22,7 @@ class CreateEquipments < ActiveRecord::Migration[5.2]
       t.integer :quantity
       t.string :where_purchased
       t.integer :department_id
+      t.boolean :archived, default: false
 
       t.integer :status, default: 0 
 

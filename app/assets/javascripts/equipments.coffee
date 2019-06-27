@@ -25,4 +25,11 @@ $ ->
   $('.update-button').click ->
     refreshTableColor()
 
+  $('.unarchived-equipments').click ->
+    $(this).addClass('is-active')
+    $('.archived-equipments').removeClass('is-active')
+
+  $('.archived-equipments').click ->
+    $(this).addClass('is-active')
+    $('.unarchived-equipments').removeClass('is-active')
 

@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   get 'about', to: "home#about"
   get 'staff', to: "home#staff"
   get 'dashboard', to: "home#dashboard"
+  get 'equipments/:id/archive/', to: "equipments#archive", as: 'archive_equipment'
 end

@@ -56,6 +56,22 @@
 <% end %>
 
 
+<div class="tabs is-boxed">
+  <ul>
+    <li class="unarchived-equipments is-active">
+      <a>
+        <span>Equipments</span>
+      </a>
+    </li>
+    <li class="archived-equipments">
+      <a>
+        <span>Archived equipments</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
 <div class="table-wrapper-scroll-y my-custom-scrollbar" style="margin-top:20px; margin-bottom:20px;">
 
   <table class="table">
@@ -87,7 +103,7 @@
           <% end %>
           <% if current_user.role=="admin" %>
           <td><%= link_to 'Edit', edit_equipment_path(equipment), class: 'button is-small is-success' %></td>
-          <td><%= link_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' } , class: 'button is-danger is-small' %></td>
+          <td><%= link_to 'Archive', archive_equipment_path(equipment),  class: 'button is-danger is-small' %></td>
           <% else %>
           <td><%= link_to 'Request maintenance', new_maintenance_path(:equipment_id => equipment.id), class: 'button is-success' %></td>
           <% end %>
