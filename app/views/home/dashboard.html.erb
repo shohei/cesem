@@ -1,6 +1,20 @@
 <h1 class="is-size-4">Requested maintenances</h1>
 
 
+<div class="tabs is-boxed">
+  <ul>
+    <li class="maintenances is-active">
+      <a>
+        <span>Maintenances</span>
+      </a>
+    </li>
+    <li class="maintenances-completed">
+      <a>
+        <span>Completed maintenances</span>
+      </a>
+    </li>
+  </ul>
+</div>
 
 
 <table class="table is-striped">
@@ -19,7 +33,7 @@
   </thead>
   <tbody>
     <% @search_maintenances.each do |maintenance| %>     
-    <tr>
+    <tr class="maintenances-table">
       <td><%= maintenance.trace_number   %></td>
       <td><%= User.find_by_id(maintenance.user_id).name %></td>
       <td><%= Equipment.find_by_id(maintenance.equipment_id).name %></td>
@@ -41,6 +55,31 @@
         <td></td>
       <% end %>
         <td><%= link_to 'Update status', edit_maintenance_path(maintenance),  class: 'button' %></td>
+    </tr>
+    <% end %>
+    <% @search_maintenances_completed.each do |_maintenance| %>     
+    <tr class="maintenances-completed-table">
+      <td><%= _maintenance.trace_number   %></td>
+      <td><%= User.find_by_id(_maintenance.user_id).name %></td>
+      <td><%= Equipment.find_by_id(_maintenance.equipment_id).name %></td>
+      <td><%= Department.find_by_id(Equipment.find_by_id(_maintenance.equipment_id).department_id).name %></td>
+      <td><%= _maintenance.status %></td>
+      <% if not _maintenance.scheduled_at.nil?  %>
+        <td><%= _maintenance.scheduled_at.strftime("%d/%m/%Y") %></td>
+      <% else %>
+        <td></td>
+      <% end %>
+      <% if not _maintenance.completion_expected_at.nil?  %>
+        <td><%= _maintenance.completion_expected_at.strftime("%d/%m/%Y") %></td>
+      <% else %>
+        <td></td>
+      <% end %>
+      <% if not _maintenance.recommission_projected_at.nil?  %>
+        <td><%= _maintenance.recommission_projected_at.strftime("%d/%m/%Y") %></td>
+      <% else %>
+        <td></td>
+      <% end %>
+        <td><%= link_to 'Update status', edit_maintenance_path(_maintenance),  class: 'button' %></td>
     </tr>
     <% end %>
   </tbody>
