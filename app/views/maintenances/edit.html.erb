@@ -67,6 +67,11 @@
     <%= form.date_select :recommission_projected_at, start_year: Date.today.year, include_blank: true %>
   </div>
 
+  <div class="field">
+    <%= form.label 'Replacement parts', class: 'label' %>
+    <%= react_component("Maintenance") %>
+  </div>
+
   <div class="actions">
     <%= form.submit 'Submit', class: 'button is-success' %>
   </div>

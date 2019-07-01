@@ -73,3 +73,8 @@ gem 'bootstrap4-datetime-picker-rails'
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem "letter_opener", :group => :development
+
+gem 'webpacker'
+gem 'react-rails'
+
+gem "font-awesome-rails"
