@@ -20,3 +20,5 @@ $(document).on 'turbolinks:load', ->
     $('.maintenances').removeClass('is-active')
     $(".maintenances-completed-table").show()
     $(".maintenances-table").hide()
+
+  $('.bxslider').bxSlider()

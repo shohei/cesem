@@ -1,0 +1,37 @@
+<div class="columns is-centered">
+  <div class="column is-one-fifth">
+    <h3 class="is-size-5">Summary this month</h3>
+    <p>Total request: <%= Maintenance.where(created_at: Date.today.beginning_of_month..Date.today.end_of_month).count %></p>
+    <p>Maintenance completed: <%= Maintenance.where(completed_at: Date.today.beginning_of_month..Date.today.end_of_month).count %></p>
+  </div>
+
+  <div class="column">
+   <div style="margin:20px 0px; border: 2px solid hsl(141, 71%, 48%); border-radius: 10px; padding: 40px 100px;">
+
+     <h1 class="is-size-3 has-text-danger has-text-centered">Main menu</h1>
+
+     <p class="is-size-5 has-text-centered has-text-white" style="background-color: hsl(204, 86%, 53%);padding: 5px;margin-top: 10px;">Kindly select one option</p>
+
+     <div class="has-text-danger is-size-5" style="padding: 5px;"><%= link_to 'Equipment list', equipments_path %></div>
+     <div class="has-text-danger is-size-5" style="padding: 5px;"><%= link_to 'Add new equipment', new_equipment_path %></div>
+     <div class="has-text-danger is-size-5" style="padding: 5px;"><a href="/followup">Request follow-up</a></div>
+     <div class="has-text-danger is-size-5" style="padding: 5px;"><%= link_to 'Billing', billings_path %></div>
+     <div class="has-text-danger is-size-5" style="padding: 5px;"><a href="/survey">Customer Satisfaction Survey</a></div>
+
+     <% if current_user.role=='admin' %>
+       <p class="is-size-5 has-text-centered has-text-white" style="background-color: hsl(14, 100%, 53%); padding: 5px;margin-top: 10px;">Admin section</p>
+       <div class="has-text-danger is-size-5" style="padding: 5px;"><a href="/dashboard">Update maintenance status</a></div>
+       <div class="has-text-danger is-size-5" style="padding: 5px;"><a href="/billings/new">Create Billing</a></div>
+     <% end %>
+   </div>
+ </div>
+
+  <div class="column is-one-fifth">
+    <h3 class="is-size-5">Latest activity</h3>
+    <%= image_tag 'spectrophotometer.png' %>
+    <h4 class="">Spectrophotometer</h4>
+    <%= image_tag 'ff_exp_bench.png', {style: 'margin-top:20px;'}%>
+    <h4 class="">Fluid Flow Experimental Bench</h4>
+  </div>
+
+</div>

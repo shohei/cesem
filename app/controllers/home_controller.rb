@@ -10,6 +10,10 @@ class HomeController < ApplicationController
 
   end
 
+  def service
+
+  end
+
   def dashboard
     @q = Maintenance.ransack(params[:q]) 
     @search_maintenances = @q.result(distinct: true).where(completed_at: nil).page(params[:page]) 
