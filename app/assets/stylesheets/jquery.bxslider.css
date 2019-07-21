@@ -177,3 +177,13 @@ ul.bxslider {
   font-size: .85em;
   padding: 10px;
 }
+
+.bx-wrapper .bx-prev {
+    left: 10px;
+    background: url(/bxslider/controls.png) no-repeat 0 -32px;
+}
+
+.bx-wrapper .bx-next {
+    right: 10px;
+    background: url(/bxslider/controls.png) no-repeat -43px -32px;
+}

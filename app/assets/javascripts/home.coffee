@@ -21,4 +21,9 @@ $(document).on 'turbolinks:load', ->
     $(".maintenances-completed-table").show()
     $(".maintenances-table").hide()
 
-  $('.bxslider').bxSlider()
+  $('.bxslider').bxSlider
+    auto: true
+    autoControls: true
+    stopAutoOnClick: true
+    pager: true
+    slideWidth: 600
