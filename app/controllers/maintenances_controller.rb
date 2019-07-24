@@ -72,23 +72,22 @@ class MaintenancesController < ApplicationController
 
   def cancel_request
     respond_to do |format|
-      _maintenance_params = maintenance_params
-      last_status = @maintenance.status
-      current_status = maintenance_params[:status]
-      if(last_status!=current_status) && current_status=='cancel_requested'
-        _maintenance_params[:cancel_requested_at] = Date.today
-      else(last_status!=current_status) && last_status=='cancel_requested'
-        _maintenance_params[:cancel_requested_at] = nil
-      end
-      if @maintenance.update(_maintenance_params)
+      @maintenance = Maintenance.find_by_id(params[:id])
+      @maintenance.cancel_requested_at = Date.today
+      @maintenance.status = :cancel_requested
+      if @maintenance.save
         AdminNotificationMailer.send_mail_maintenance_cancel_requested(@maintenance).deliver_later
-        format.html { redirect_to @maintenance, notice: 'Maintenance cancel was successfully requested.' }
+        format.html { redirect_to :cancel_request_received, notice: 'Maintenance cancel was successfully requested.' }
         format.json { render :show, status: :ok, location: @maintenance }
       else
         format.html { render :edit }
         format.json { render json: @maintenance.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def cancel_request_received 
+    @maintenance = Maintenance.find_by_id(params[:id])
   end
 
   # DELETE /maintenances/1
@@ -136,6 +135,6 @@ class MaintenancesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def maintenance_params
-      params.require(:maintenance).permit(:user_id, :equipment_id, :description, :precaution, :trace_number, :diagnosis, :status, :scheduled_at, :completion_expected_at, :recommission_projected_at, :other_status, :completed_at)
+      params.require(:maintenance).permit(:user_id, :equipment_id, :description, :precaution, :trace_number, :diagnosis, :status, :scheduled_at, :completion_expected_at, :recommission_projected_at, :other_status, :completed_at, :cancel_requested_at, :canceled_at)
     end
 end
