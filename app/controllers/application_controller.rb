@@ -30,4 +30,13 @@ class ApplicationController < ActionController::Base
     all_service_path(current_user) 
   end
 
+  def after_inactive_sign_up_path_for
+    puts 'inactive*********'
+     sign_up_confirmation_path
+  end
+
+  def after_sign_up_path_for
+    puts 'active*********'
+     sign_up_confirmation_path
+  end
 end

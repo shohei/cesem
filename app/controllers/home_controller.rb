@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :about, :staff]
+  before_action :authenticate_user!, except: [:index, :about, :staff, :sign_up_confirmation]
   before_action :authenticate_admin_user!, only: [:dashboard]
 
   def index
@@ -11,6 +11,10 @@ class HomeController < ApplicationController
   end
 
   def service
+
+  end
+
+  def sign_up_confirmation
 
   end
 

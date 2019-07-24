@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   get 'cancel_request_received/:id', to: 'maintenances#cancel_request_received', as: 'cancel_request_received'
   get 'equipments/:id/archive/', to: "equipments#archive", as: 'archive_equipment'
   get 'equipments/:id/unarchive/', to: "equipments#unarchive", as: 'unarchive_equipment'
+  get 'sign_up_confirmation', to: 'home#sign_up_confirmation', as: 'sign_up_confirmation'
 end
