@@ -88,7 +88,7 @@
     </tr>
     <% end %>
     <% @search_maintenances_canceled.each do |__maintenance| %>     
-    <tr class="maintenances-completed-table">
+    <tr class="maintenances-canceled-table">
       <td><%= __maintenance.trace_number   %></td>
       <td><%= User.find_by_id(__maintenance.user_id).name %></td>
       <td><%= Equipment.find_by_id(__maintenance.equipment_id).name %></td>

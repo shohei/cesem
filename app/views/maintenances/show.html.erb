@@ -63,6 +63,6 @@
 </p>
 
 
-<% if @maintenance.status != 'cancel_requested' %>
+<% if @maintenance.status != 'cancel_requested' && @maintenance.status != 'canceled' %>
  <%= link_to 'Cancel Maintenance', maintenance_cancel_request_path(@maintenance.id), method: :put, data: {confirm: "Are you sure to cancel this maintenance?"}, class: 'button is-danger', style: 'margin-top: 40px;' %>
 <% end %>
