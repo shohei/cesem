@@ -307,7 +307,7 @@ agri_bio_engineering:
   alias: agri_bio_engineering
 
 water:
-  name: Department of Water and Environmental Management
+  name: Department of Soil, Water and Environmental Engineering
   abbreviation:
   school: sobee
   alias: water
