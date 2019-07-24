@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'acknowledgement', to: 'maintenances#acknowledgement'
   get 'followup', to: 'maintenances#followup'
   get 'survey', to: 'home#survey'
-  get 'service', to: 'home#service'
+  get 'service', to: 'home#service', as: 'all_service'
   get 'search', to: 'equipments#search'
   get 'download_pdf', to: "home#download_pdf"
   get 'about', to: "home#about"
