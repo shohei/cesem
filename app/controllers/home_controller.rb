@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :authenticate_user!, except: [:about, :staff]
+  before_action :authenticate_user!, except: [:index, :about, :staff]
   before_action :authenticate_admin_user!, only: [:dashboard]
 
   def index
