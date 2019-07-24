@@ -12,14 +12,26 @@ $(document).on 'turbolinks:load', ->
   $('.maintenances').click ->
     $(this).addClass('is-active')
     $('.maintenances-completed').removeClass('is-active')
-    $(".maintenances-completed-table").hide()
+    $('.maintenances-canceled').removeClass('is-active')
     $(".maintenances-table").show()
+    $(".maintenances-completed-table").hide()
+    $(".maintenances-canceled-table").hide()
 
   $('.maintenances-completed').click ->
     $(this).addClass('is-active')
     $('.maintenances').removeClass('is-active')
+    $('.maintenances-canceled').removeClass('is-active')
     $(".maintenances-completed-table").show()
     $(".maintenances-table").hide()
+    $(".maintenances-canceled-table").hide()
+
+  $('.maintenances-canceled').click ->
+    $(this).addClass('is-active')
+    $('.maintenances').removeClass('is-active')
+    $('.maintenances-completed').removeClass('is-active')
+    $(".maintenances-canceled-table").show()
+    $(".maintenances-table").hide()
+    $(".maintenances-completed-table").hide()
 
   $('.bxslider').bxSlider
     auto: true

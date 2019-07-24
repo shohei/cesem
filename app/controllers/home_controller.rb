@@ -18,6 +18,7 @@ class HomeController < ApplicationController
     @q = Maintenance.ransack(params[:q]) 
     @search_maintenances = @q.result(distinct: true).where(completed_at: nil).page(params[:page]) 
     @search_maintenances_completed = @q.result(distinct: true).where.not(completed_at: nil).page(params[:page]) 
+    @search_maintenances_canceled = @q.result(distinct: true).where.not(canceled_at: nil).page(params[:page]) 
   end
 
   def staff

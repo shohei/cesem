@@ -13,6 +13,11 @@
         <span>Completed maintenances</span>
       </a>
     </li>
+    <li class="maintenances-canceled">
+      <a>
+        <span>Canceled maintenances</span>
+      </a>
+    </li>
   </ul>
 </div>
 
@@ -80,6 +85,31 @@
         <td></td>
       <% end %>
         <td><%= link_to 'Update status', edit_maintenance_path(_maintenance),  class: 'button' %></td>
+    </tr>
+    <% end %>
+    <% @search_maintenances_canceled.each do |__maintenance| %>     
+    <tr class="maintenances-completed-table">
+      <td><%= __maintenance.trace_number   %></td>
+      <td><%= User.find_by_id(__maintenance.user_id).name %></td>
+      <td><%= Equipment.find_by_id(__maintenance.equipment_id).name %></td>
+      <td><%= Department.find_by_id(Equipment.find_by_id(__maintenance.equipment_id).department_id).name %></td>
+      <td><%= __maintenance.status %></td>
+      <% if not __maintenance.scheduled_at.nil?  %>
+        <td><%= __maintenance.scheduled_at.strftime("%d/%m/%Y") %></td>
+      <% else %>
+        <td></td>
+      <% end %>
+      <% if not __maintenance.completion_expected_at.nil?  %>
+        <td><%= __maintenance.completion_expected_at.strftime("%d/%m/%Y") %></td>
+      <% else %>
+        <td></td>
+      <% end %>
+      <% if not __maintenance.recommission_projected_at.nil?  %>
+        <td><%= __maintenance.recommission_projected_at.strftime("%d/%m/%Y") %></td>
+      <% else %>
+        <td></td>
+      <% end %>
+        <td><%= link_to 'Update status', edit_maintenance_path(__maintenance),  class: 'button' %></td>
     </tr>
     <% end %>
   </tbody>
