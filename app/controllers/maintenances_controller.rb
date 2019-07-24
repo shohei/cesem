@@ -59,6 +59,11 @@ class MaintenancesController < ApplicationController
       else(last_status!=current_status) && last_status=='completed'
         _maintenance_params[:completed_at] = nil
       end
+      if(last_status!=current_status) && current_status=='canceled'
+        _maintenance_params[:canceled_at] = Date.today
+      else(last_status!=current_status) && last_status=='canceled'
+        _maintenance_params[:canceled_at] = nil
+      end
       if @maintenance.update(_maintenance_params)
         UserNotificationMailer.send_mail_maintenance_updated(@maintenance).deliver_later
         format.html { redirect_to @maintenance, notice: 'Maintenance was successfully updated.' }
