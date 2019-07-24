@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :services
   resources :billings
   resources :maintenances
-  devise_for :users
+  # devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
   get 'home/index'
   root 'home#index'
   get 'acknowledgement', to: 'maintenances#acknowledgement'

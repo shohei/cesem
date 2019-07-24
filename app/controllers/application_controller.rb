@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name]) # 新規登録時(sign_up時)にnameというキーのパラメーターを追加で許可する
   end
 
-
  protected
   def authenticate_user!
     if user_signed_in?
@@ -30,13 +29,4 @@ class ApplicationController < ActionController::Base
     all_service_path(current_user) 
   end
 
-  def after_inactive_sign_up_path_for
-    puts 'inactive*********'
-     sign_up_confirmation_path
-  end
-
-  def after_sign_up_path_for
-    puts 'active*********'
-     sign_up_confirmation_path
-  end
 end
