@@ -13,4 +13,16 @@ class AdminNotificationMailer < ApplicationMailer
       end
   end
 
+
+  def send_mail_maintenance_cancel_requested(maintenance)
+    @maintenance = maintenance
+    @user = User.find_by_id(maintenance.user_id)
+    admin_email = ENV['ADMIN_EMAIL'] 
+    mail(
+      subject: "Maintenance cancel request received",
+      to: admin_email
+    ) do |format|
+        format.html
+      end
+  end
 end

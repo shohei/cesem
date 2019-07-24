@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'about', to: "home#about"
   get 'staff', to: "home#staff"
   get 'dashboard', to: "home#dashboard"
+  put 'maintenance_cancel_request', to: "maintenances#cancel_request"
   get 'equipments/:id/archive/', to: "equipments#archive", as: 'archive_equipment'
   get 'equipments/:id/unarchive/', to: "equipments#unarchive", as: 'unarchive_equipment'
 end

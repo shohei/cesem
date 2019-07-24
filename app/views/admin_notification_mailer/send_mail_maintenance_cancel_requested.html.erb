@@ -1,13 +1,13 @@
-<h3>A user has requested maintenance</h3>
+<h3>A user has requested cancellation of maintenance</h3>
 
-<p>The detail of the request is below:</p>
+<p>The detail of the cancel request is below:</p>
 
 <hr/>
 <p><b>Requester: </b><%= @user.name %></p>
 
 <p><b>Trace Number: </b><%= @maintenance.trace_number %></p>
 
-<p><b>Date of request: </b><%= @maintenance.created_at.strftime("%d/%m/%Y") %></p>
+<p><b>Date of request: </b><%= @maintenance.cancel_requested_at.strftime("%d/%m/%Y") %></p>
 
 <p><b>Equipment name: </b><%= Equipment.find_by_id(@maintenance.equipment_id).name %></p>
 

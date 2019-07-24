@@ -70,6 +70,27 @@ class MaintenancesController < ApplicationController
     end
   end
 
+  def cancel_request
+    respond_to do |format|
+      _maintenance_params = maintenance_params
+      last_status = @maintenance.status
+      current_status = maintenance_params[:status]
+      if(last_status!=current_status) && current_status=='cancel_requested'
+        _maintenance_params[:cancel_requested_at] = Date.today
+      else(last_status!=current_status) && last_status=='cancel_requested'
+        _maintenance_params[:cancel_requested_at] = nil
+      end
+      if @maintenance.update(_maintenance_params)
+        AdminNotificationMailer.send_mail_maintenance_cancel_requested(@maintenance).deliver_later
+        format.html { redirect_to @maintenance, notice: 'Maintenance cancel was successfully requested.' }
+        format.json { render :show, status: :ok, location: @maintenance }
+      else
+        format.html { render :edit }
+        format.json { render json: @maintenance.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   # DELETE /maintenances/1
   # DELETE /maintenances/1.json
   def destroy
