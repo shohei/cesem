@@ -78,9 +78,9 @@
       <tr>
         <th>Name</th>
         <th>Department</th>
-        <th>Acquired year</th>
-        <th>Model name</th>
-        <th>Location</th>
+        <th>Serial number</th>
+        <th>inventory number</th>
+        <th>Model number</th>
         <th>Manufacturer</th>
         <th>Status</th>
         <th colspan="3"></th>
@@ -93,9 +93,9 @@
       <tr class="search-equipments-table">
         <td><%= link_to equipment.name , equipment %></td>
         <td><%= Department.find_by_id(equipment.department_id).name %></td>
-        <td><%= equipment.acquired_year %></td>
+        <td><%= equipment.serial_number %></td>
+        <td><%= equipment.inventory_number %></td>
         <td><%= equipment.model_number %></td>
-        <td><%= equipment.location %></td>
         <td><%= equipment.manufacturer %></td>
         <%= form_with(model: equipment, remote: true) do |form| %>
         <td><%= form.select :status, Equipment.statuses.keys, {}, {class: 'equipment_status'} %>
