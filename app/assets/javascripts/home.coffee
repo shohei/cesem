@@ -39,5 +39,6 @@ $(document).on 'turbolinks:load', ->
     stopAutoOnClick: true
     pager: true
     slideWidth: 600
-  $(".bx-wrapper").attr("style":"max-width:1200px");
+
+  $(".bx-wrapper").attr("style":"margin:auto; max-width: 600px;margin-bottom: 20px;");
 
