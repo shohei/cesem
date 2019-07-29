@@ -11,6 +11,7 @@
   <thead>
     <tr>
      <th>Equipment name</th>
+     <th>Department</th>
      <th>Requester</th>
      <th>Request date</th>
      <th>Expert's diagnosis</th>
@@ -20,6 +21,7 @@
   <% @completed_maintenances.each do |m| %>
    <tr>
     <td><%= Equipment.find_by_id(m.equipment_id).name %></td>
+    <td><%= Department.find_by_id(Equipment.find_by_id(m.equipment_id).department_id).name %></td>
     <td><%= User.find_by_id(m.user_id).name %></td>
     <td><%= m.created_at.strftime("%d/%m/%Y") %></td>
     <td><%= m.diagnosis %></td>
