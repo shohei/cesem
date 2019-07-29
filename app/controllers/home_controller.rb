@@ -10,6 +10,34 @@ class HomeController < ApplicationController
 
   end
 
+
+  def summary
+    @q = Maintenance.ransack(params[:q]) 
+    beginning_of_month = Date.today.beginning_of_month
+    beginning_of_next_month = beginning_of_month.next_month
+    @requested_maintenances = @q.result(distinct: true).where(created_at: beginning_of_month..beginning_of_next_month).where(completed_at: nil).page(params[:page]) 
+    @completed_maintenances = @q.result(distinct: true).where(created_at: beginning_of_month..beginning_of_next_month).where.not(completed_at: nil).page(params[:page]) 
+
+    ids = @requested_maintenances.pluck(:equipment_id)
+    tmp_equipments = Equipment.find(ids)
+    new_equipments = ids.map {|x| tmp_equipments.detect {|b| b.id == x } }
+    ids = new_equipments.pluck(:department_id)
+    tmp_departments = Department.find(ids)
+    new_departments = ids.map {|x| tmp_departments.detect {|b| b.id == x } }
+    ary = new_departments.pluck(:name)
+    @departments = ary.each_with_object(Hash.new(0)){|v,o| o[v]+=1}
+
+    ids = @completed_maintenances.pluck(:equipment_id)
+    tmp_equipments = Equipment.find(ids)
+    new_equipments = ids.map {|x| tmp_equipments.detect {|b| b.id == x } }
+    ids = new_equipments.pluck(:department_id)
+    tmp_departments = Department.find(ids)
+    new_departments = ids.map {|x| tmp_departments.detect {|b| b.id == x } }
+    ary = new_departments.pluck(:name)
+    @departments2 = ary.each_with_object(Hash.new(0)){|v,o| o[v]+=1}
+
+  end
+  
   def service
 
   end

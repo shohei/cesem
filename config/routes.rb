@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'download_pdf', to: "home#download_pdf"
   get 'about', to: "home#about"
   get 'staff', to: "home#staff"
+  get 'summary', to: "home#summary"
   get 'dashboard', to: "home#dashboard"
   put 'maintenance_cancel_request/:id', to: "maintenances#cancel_request", as: 'maintenance_cancel_request'
   get 'cancel_request_received/:id', to: 'maintenances#cancel_request_received', as: 'cancel_request_received'

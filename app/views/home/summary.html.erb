@@ -1,0 +1,32 @@
+<h1 class="is-size-4">Monthly report</h1>
+
+<p>Requested maintenance: <%= @requested_maintenances.count %></p>
+<%= pie_chart @departments %>
+
+<p>Completed maintenance: <%= @completed_maintenances.count %></p> 
+<%= pie_chart @departments2 %>
+
+<p>Detail of completed maintenance</p>
+<table class="table">
+  <thead>
+    <tr>
+     <th>Equipment name</th>
+     <th>Requester</th>
+     <th>Request date</th>
+     <th>Expert's diagnosis</th>
+   </tr>
+ </thead>
+ <tbody>
+  <% @completed_maintenances.each do |m| %>
+   <tr>
+    <td><%= Equipment.find_by_id(m.equipment_id).name %></td>
+    <td><%= User.find_by_id(m.user_id).name %></td>
+    <td><%= m.created_at.strftime("%d/%m/%Y") %></td>
+    <td><%= m.diagnosis %></td>
+  </tr>
+  <% end %>
+</tbody>
+
+</table>
+
+

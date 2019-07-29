@@ -80,3 +80,5 @@ gem 'react-rails'
 gem "font-awesome-rails"
 
 gem 'hypdf', '~> 1.0.18'
+
+gem 'chartkick'
