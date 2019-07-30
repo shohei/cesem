@@ -15,7 +15,7 @@ class HomeController < ApplicationController
     @q = Maintenance.ransack(params[:q]) 
     beginning_of_month = Date.today.beginning_of_month
     beginning_of_next_month = beginning_of_month.next_month
-    @requested_maintenances = @q.result(distinct: true).where(created_at: beginning_of_month..beginning_of_next_month).where(completed_at: nil).page(params[:page]) 
+    @requested_maintenances = @q.result(distinct: true).where(created_at: beginning_of_month..beginning_of_next_month).page(params[:page]) 
     @completed_maintenances = @q.result(distinct: true).where(created_at: beginning_of_month..beginning_of_next_month).where.not(completed_at: nil).page(params[:page]) 
 
     ids = @requested_maintenances.pluck(:equipment_id)
