@@ -384,5 +384,15 @@ icb:
   school: misc_school
   alias: icb
 
+ibr:
+  name: Institute for Biotechnology Research
+  abbreviation: IBR 
+  school: misc_school
+  alias: ibr
 
+ieet:
+  name: Institute of Energy and Environemental Technology
+  abbreviation: IEET 
+  school: misc_school
+  alias: ieet
 
