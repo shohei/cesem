@@ -29,21 +29,21 @@ class HomeController < ApplicationController
         @year = Date.today.year
         beginning_of_year = Date.today.beginning_of_year
         beginning_of_last_month = Date.today.end_of_year.next_month
-        @requested_maintenances = @q.result(distinct: true).where(created_at: beginning_of_year..beginning_of_last_month).page(params[:page]) 
-        @completed_maintenances = @q.result(distinct: true).where(created_at: beginning_of_year..beginning_of_last_month).where.not(completed_at: nil).page(params[:page]) 
+        @requested_maintenances = @q.result(distinct: true).where(created_at: beginning_of_year..beginning_of_last_month)
+        @completed_maintenances = @q.result(distinct: true).where(created_at: beginning_of_year..beginning_of_last_month).where.not(completed_at: nil)
       else
         # month blank but year exists -> use parameter year
         beginning_of_year = Date.new(@year.to_i)
         beginning_of_last_month = beginning_of_year.end_of_year.next_month
         @requested_maintenances = @q.result(distinct: true).where(created_at: beginning_of_year..beginning_of_last_month).page(params[:page]) 
-        @completed_maintenances = @q.result(distinct: true).where(created_at: beginning_of_year..beginning_of_last_month).where.not(completed_at: nil).page(params[:page]) 
+        @completed_maintenances = @q.result(distinct: true).where(created_at: beginning_of_year..beginning_of_last_month).where.not(completed_at: nil)
       end
     else
       @month_name = Date::MONTHNAMES[@month.to_i]
       beginning_of_month = Date.new(@year.to_i,@month.to_i,1)
       beginning_of_next_month = beginning_of_month.next_month
       @requested_maintenances = @q.result(distinct: true).where(created_at: beginning_of_month..beginning_of_next_month).page(params[:page]) 
-      @completed_maintenances = @q.result(distinct: true).where(created_at: beginning_of_month..beginning_of_next_month).where.not(completed_at: nil).page(params[:page]) 
+      @completed_maintenances = @q.result(distinct: true).where(created_at: beginning_of_month..beginning_of_next_month).where.not(completed_at: nil)
     end
 
     ids = @requested_maintenances.pluck(:equipment_id)
