@@ -19,13 +19,14 @@ class HomeController < ApplicationController
       @year = params[:report]["year(1i)"]
     else
       @month = ''
-      @year = Date.today.year
+      @year = ''
     end
 
     if(@month.blank?)
       @month_name = ''
       if (@year.blank?) 
         # month and year is blank -> use this year
+        @year = Date.today.year
         beginning_of_year = Date.today.beginning_of_year
         beginning_of_last_month = Date.today.end_of_year.next_month
         @requested_maintenances = @q.result(distinct: true).where(created_at: beginning_of_year..beginning_of_last_month).page(params[:page]) 
