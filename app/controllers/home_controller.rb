@@ -26,17 +26,16 @@ class HomeController < ApplicationController
       @month_name = ''
       if (@year.blank?) 
         # month and year is blank -> use this year
-        beginning_of_month = Date.today.beginning_of_year
+        beginning_of_year = Date.today.beginning_of_year
         beginning_of_last_month = Date.today.end_of_year.next_month
-        @requested_maintenances = @q.result(distinct: true).where(created_at: beginning_of_month..beginning_of_last_month).page(params[:page]) 
-        @completed_maintenances = @q.result(distinct: true).where(created_at: beginning_of_month..beginning_of_last_month).where.not(completed_at: nil).page(params[:page]) 
+        @requested_maintenances = @q.result(distinct: true).where(created_at: beginning_of_year..beginning_of_last_month).page(params[:page]) 
+        @completed_maintenances = @q.result(distinct: true).where(created_at: beginning_of_year..beginning_of_last_month).where.not(completed_at: nil).page(params[:page]) 
       else
         # month blank but year exists -> use parameter year
         beginning_of_year = Date.new(@year.to_i)
-        beginning_of_last_month = beginning_of_year.end_of_year
+        beginning_of_last_month = beginning_of_year.end_of_year.next_month
         @requested_maintenances = @q.result(distinct: true).where(created_at: beginning_of_year..beginning_of_last_month).page(params[:page]) 
         @completed_maintenances = @q.result(distinct: true).where(created_at: beginning_of_year..beginning_of_last_month).where.not(completed_at: nil).page(params[:page]) 
-
       end
     else
       @month_name = Date::MONTHNAMES[@month.to_i]
