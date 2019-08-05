@@ -12,7 +12,7 @@ class HomeController < ApplicationController
 
 
   def summary
-    @q = Maintenance.ransack(params[:q]) 
+    @q = Maintenance.all
     
     if(params[:report])
       @month = params[:report]["month(2i)"]
