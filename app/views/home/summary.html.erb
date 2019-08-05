@@ -2,9 +2,10 @@
 
 <%= form_tag('summary', method: :get) do %>
 <div class="field">
-  <%= date_select("report", "month", order: [:month], include_blank: true) %>
-  <%= date_select("report", "year", order: [:year], include_blank: false) %>
+  <%= date_select("report", "month", order: [:month], selected: Date.today, include_blank: false) %>
+  <%= date_select("report", "year", order: [:year], selected: Date.today, include_blank: false) %>
   <%= submit_tag 'Filter' , class: 'button' %>
+  <%= link_to 'Clear', '/summary', class: 'button' %>
 </div>
 <% end %>
 

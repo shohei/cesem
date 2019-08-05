@@ -13,15 +13,10 @@ class HomeController < ApplicationController
 
   def summary
     @q = Maintenance.ransack(params[:q]) 
-    # beginning_of_month = Date.today.beginning_of_month
-    # beginning_of_next_month = beginning_of_month.next_month
 
     if(params[:report])
       month = params[:report]["month(2i)"]
       year = params[:report]["year(1i)"]
-    else
-      month = ''
-      year = Date.today.year 
     end
 
     if(month.blank?)
