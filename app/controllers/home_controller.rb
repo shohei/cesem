@@ -13,10 +13,28 @@ class HomeController < ApplicationController
 
   def summary
     @q = Maintenance.ransack(params[:q]) 
-    beginning_of_month = Date.today.beginning_of_month
-    beginning_of_next_month = beginning_of_month.next_month
-    @requested_maintenances = @q.result(distinct: true).where(created_at: beginning_of_month..beginning_of_next_month).page(params[:page]) 
-    @completed_maintenances = @q.result(distinct: true).where(created_at: beginning_of_month..beginning_of_next_month).where.not(completed_at: nil).page(params[:page]) 
+    # beginning_of_month = Date.today.beginning_of_month
+    # beginning_of_next_month = beginning_of_month.next_month
+
+    if(params[:report])
+      month = params[:report]["month(2i)"]
+      year = params[:report]["year(1i)"]
+    else
+      month = ''
+      year = Date.today.year 
+    end
+
+    if(month.blank?)
+      beginning_of_month = Date.today.beginning_of_year
+      beginning_of_last_month = Date.today.end_of_year.next_month
+      @requested_maintenances = @q.result(distinct: true).where(created_at: beginning_of_month..beginning_of_last_month).page(params[:page]) 
+      @completed_maintenances = @q.result(distinct: true).where(created_at: beginning_of_month..beginning_of_last_month).where.not(completed_at: nil).page(params[:page]) 
+    else
+      beginning_of_month = Date.new(year.to_i,month.to_i,1)
+      beginning_of_next_month = beginning_of_month.next_month
+      @requested_maintenances = @q.result(distinct: true).where(created_at: beginning_of_month..beginning_of_next_month).page(params[:page]) 
+      @completed_maintenances = @q.result(distinct: true).where(created_at: beginning_of_month..beginning_of_next_month).where.not(completed_at: nil).page(params[:page]) 
+    end
 
     ids = @requested_maintenances.pluck(:equipment_id)
     tmp_equipments = Equipment.find(ids)

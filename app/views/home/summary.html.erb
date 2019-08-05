@@ -1,5 +1,13 @@
 <h1 class="is-size-4">Monthly report</h1>
 
+<%= form_tag('summary', method: :get) do %>
+<div class="field">
+  <%= date_select("report", "month", order: [:month], include_blank: true) %>
+  <%= date_select("report", "year", order: [:year], include_blank: false) %>
+  <%= submit_tag 'Filter' , class: 'button' %>
+</div>
+<% end %>
+
 <p>Requested maintenance: <%= @requested_maintenances.count %></p>
 <%= pie_chart @departments %>
 
