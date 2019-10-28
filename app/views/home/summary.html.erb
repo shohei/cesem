@@ -19,21 +19,39 @@
 <table class="table">
   <thead>
     <tr>
-     <th>Equipment name</th>
      <th>Department</th>
-     <th>Requester</th>
-     <th>Request date</th>
+     <th>Equipment name</th>
+     <th>Manufacturer</th>
+     <th>Model name</th>
+     <th>Model number</th>
+     <th>Serial number</th>
+     <th>Inventory number</th>
+     <th>Location</th>
+     <th>Year acquired</th>
+     <th>Country of origin</th>
+     <!-- <th>Requester</th> -->
+     <!-- <th>Request date</th> -->
      <th>Expert's diagnosis</th>
+     <th>Date of completion</th>
    </tr>
  </thead>
  <tbody>
   <% @completed_maintenances.each do |m| %>
    <tr>
-    <td><%= Equipment.find_by_id(m.equipment_id).name %></td>
     <td><%= Department.find_by_id(Equipment.find_by_id(m.equipment_id).department_id).name %></td>
-    <td><%= User.find_by_id(m.user_id).name %></td>
-    <td><%= m.created_at.strftime("%d/%m/%Y") %></td>
+    <td><%= Equipment.find_by_id(m.equipment_id).name %></td>
+    <td><%= Equipment.find_by_id(m.equipment_id).manufacturer %></td>
+    <td><%= Equipment.find_by_id(m.equipment_id).name_of_model %></td>
+    <td><%= Equipment.find_by_id(m.equipment_id).model_number %></td>
+    <td><%= Equipment.find_by_id(m.equipment_id).serial_number %></td>
+    <td><%= Equipment.find_by_id(m.equipment_id).inventory_number %></td>
+    <td><%= Equipment.find_by_id(m.equipment_id).location %></td>
+    <td><%= Equipment.find_by_id(m.equipment_id).acquired_year %></td>
+    <td><%= Equipment.find_by_id(m.equipment_id).country_of_origin %></td>
+    <!-- <td><%= User.find_by_id(m.user_id).name %></td> -->
+    <!-- <td><%= m.created_at.strftime("%d/%m/%Y") %></td> -->
     <td><%= m.diagnosis %></td>
+    <td><%= m.completed_at %></td>
   </tr>
   <% end %>
 </tbody>
