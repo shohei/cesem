@@ -83,4 +83,3 @@ gem "font-awesome-rails"
 gem 'hypdf'
 
 gem 'chartkick'
-gem 'pry-byebug'

@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
 require 'tqdm'
-require 'pry-byebug'
 
 u1 = User.new(name: 'Jomo Kenyatta', email: 'cesem-admin@jkuat.ac.ke', role: 'admin', password: ENV['ADMIN_PASSWORD'])
 u1.skip_confirmation!
@@ -69,11 +68,7 @@ csv.tqdm.each do |row|
         t.acquired_year = row['acquired_year']
         t.location = row['location']
         t.remark = row['remark']
-        begin
-          t.department_id = Department.find_by_alias(row['department']).id 
-        rescue
-          binding.pry
-        end
+        t.department_id = Department.find_by_alias(row['department']).id 
         t.description =  row['description']
         t.inventory_number = row['inventory_number']
         t.save!
