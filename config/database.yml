@@ -6,11 +6,16 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  <<: *default
-  adapter: postgresql
-  database: cesem_development
-  username: cesem 
-  password: cesem 
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+#development:
+#  <<: *default
+#  adapter: postgresql
+#  database: cesem_development
+#  username: cesem 
+#  password: cesem 
 
 test:
   <<: *default
