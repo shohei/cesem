@@ -98,7 +98,6 @@ GEM
     chromedriver-helper (2.1.1)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
-    coderay (1.1.3)
     coffee-rails (5.0.0)
       coffee-script (>= 2.2.0)
       railties (>= 5.2.0)
@@ -119,6 +118,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dockerfile-rails (1.5.12)
+      rails (>= 3.0.0)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
@@ -195,14 +196,12 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.9-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.13.9-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.13.9-x86_64-linux)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.4.4)
-    pry (0.14.1)
-      coderay (~> 1.1)
-      method_source (~> 1.0)
-    pry-byebug (3.10.1)
-      byebug (~> 11.0)
-      pry (>= 0.13, < 0.15)
     public_suffix (5.0.0)
     puma (6.0.0)
       nio4r (~> 2.0)
@@ -274,6 +273,11 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     semantic_range (3.0.0)
+    sentry-rails (5.12.0)
+      railties (>= 5.0)
+      sentry-ruby (~> 5.12.0)
+    sentry-ruby (5.12.0)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
     spring (4.1.0)
     spring-watcher-listen (2.1.0)
       listen (>= 2.7, < 4.0)
@@ -286,6 +290,8 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.5.3-arm64-darwin)
+    sqlite3 (1.5.3-x86_64-darwin)
+    sqlite3 (1.5.3-x86_64-linux)
     thor (1.2.1)
     tilt (2.0.11)
     timeout (0.3.0)
@@ -320,6 +326,8 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
+  x86_64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
@@ -331,6 +339,7 @@ DEPENDENCIES
   coffee-rails
   country_select
   devise
+  dockerfile-rails (>= 1.5)
   dotenv-rails
   filterrific
   font-awesome-rails
@@ -341,13 +350,14 @@ DEPENDENCIES
   letter_opener
   listen
   pg
-  pry-byebug
   puma
   rails (= 7.0.4)
   ransack
   react-rails
   sass-rails
   selenium-webdriver
+  sentry-rails (~> 5.12)
+  sentry-ruby (~> 5.12)
   spring
   spring-watcher-listen
   sqlite3

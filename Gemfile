@@ -13,7 +13,7 @@ gem 'puma'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier'
+#gem 'uglifier'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
@@ -83,3 +83,9 @@ gem "font-awesome-rails"
 gem 'hypdf'
 
 gem 'chartkick'
+
+gem "dockerfile-rails", ">= 1.5", :group => :development
+
+gem "sentry-ruby", "~> 5.12"
+
+gem "sentry-rails", "~> 5.12"
