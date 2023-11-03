@@ -2,6 +2,7 @@
   "name": "cesem",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.0",
     "@babel/preset-react": "^7.0.0",
     "@rails/webpacker": "5.4.3",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
@@ -10,12 +11,11 @@
     "react_ujs": "^2.5.0",
     "react-dom": "^16.8.6",
     "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12",
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.0"
+    "webpack-cli": "^3.3.12"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "webpack-dev-server": "^3"
+    "webpack-dev-server": "^4.15.1"
   },
   "packageManager": "yarn@1.22.19"
 }
